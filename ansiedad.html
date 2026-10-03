@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2c7a6b">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Nunito:ital,wght@0,400..800;1,400..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    (function () {
+      document.documentElement.classList.add('no-js');
+      try { var t = localStorage.getItem('wb-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+    })();
+  </script>
+  <title>Ansiedad y respiración · WellBreath</title>
+  <meta name="description" content="Por qué la ansiedad te roba el aire, qué pasa en tu cuerpo durante una crisis y cómo usar la respiración para recuperar la calma. Con ejercicios guiados y anclaje 5-4-3-2-1.">
+</head>
+<body class="theme-calm">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="WellBreath, inicio">
+        <img class="brand-mark" src="img/favicon.svg" alt="" width="36" height="36">
+        <span><span class="brand-name">WellBreath</span><span class="brand-tag">Respirar bien, vivir mejor</span></span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="habitos.html">Hábitos</a></li>
+          <li><a href="ejercicios.html">Ejercicios</a></li>
+          <li><a href="ansiedad.html" aria-current="page">Ansiedad</a></li>
+          <li><a href="tdah.html">TDAH</a></li>
+          <li><a href="fuentes.html">Fuentes</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="icon-btn theme-toggle" aria-label="Cambiar tema claro u oscuro">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button type="button" class="icon-btn nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Ansiedad</span>
+        <h1>Cuando la ansiedad te roba el aire</h1>
+        <p class="lead">Si alguna vez has sentido que no te llegaba el aire, que el pecho se te cerraba o que el corazón se te iba a salir, queremos que sepas dos cosas: no te pasa solo a ti, y hay mucho que puedes hacer. Empezando por algo que llevas contigo siempre: tu respiración.</p>
+        <div class="btn-row mt-2">
+          <button type="button" class="btn btn-calm btn-lg" data-open-sos>Necesito calmarme ahora</button>
+          <a class="btn btn-ghost btn-lg" href="#entender">Quiero entenderlo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container article-layout">
+        <aside class="toc" aria-label="Índice">
+          <h2>En esta página</h2>
+          <ol>
+            <li><a href="#entender">Qué es la ansiedad</a></li>
+            <li><a href="#cuerpo">Qué pasa en tu cuerpo</a></li>
+            <li><a href="#circulo">El círculo vicioso</a></li>
+            <li><a href="#co2">El papel del CO₂</a></li>
+            <li><a href="#por-que">Por qué ayuda respirar lento</a></li>
+            <li><a href="#practica">Practica ahora</a></li>
+            <li><a href="#anclaje">Anclaje 5-4-3-2-1</a></li>
+            <li><a href="#crisis">Durante una crisis</a></li>
+            <li><a href="#mitos">Mitos</a></li>
+            <li><a href="#dia-a-dia">Plan para el día a día</a></li>
+            <li><a href="#ayuda">Cuándo pedir ayuda</a></li>
+          </ol>
+        </aside>
+
+        <div>
+          <article class="prose">
+            <h2 id="entender" class="mt-0">Primero, lo más importante</h2>
+            <p>La ansiedad no es un fallo tuyo ni una señal de debilidad. Es un sistema de alarma antiguo y muy útil, diseñado para protegerte del peligro. El problema es que a veces se vuelve demasiado sensible y salta cuando no hay ningún león delante: ante un correo del jefe, una conversación pendiente, una sensación rara en el cuerpo o, simplemente, sin motivo aparente.</p>
+            <p>Los trastornos de ansiedad son de los problemas de salud mental más frecuentes del mundo. Según la Organización Mundial de la Salud, afectan a cientos de millones de personas. Si es tu caso, estás en muy buena compañía, y hay tratamientos que funcionan.</p>
+            <blockquote>La respiración no va a hacer desaparecer tu ansiedad por arte de magia. Pero puede convertirse en un ancla: algo a lo que agarrarte mientras pasa la ola.</blockquote>
+
+            <h2 id="cuerpo">Qué pasa en tu cuerpo cuando sientes ansiedad</h2>
+            <p>Cuando tu cerebro detecta una amenaza (real o imaginada), activa el sistema nervioso simpático, el famoso modo «lucha o huida». En segundos:</p>
+            <ul>
+              <li>Tu corazón late más rápido y más fuerte.</li>
+              <li>Los músculos se tensan, sobre todo hombros, mandíbula y abdomen.</li>
+              <li><strong>Tu respiración se acelera, se vuelve corta y sube al pecho.</strong> Empiezas a respirar con los hombros y el cuello en lugar de con el diafragma.</li>
+              <li>Puedes suspirar o bostezar a menudo, o tener la sensación de que «no consigues llenar los pulmones».</li>
+            </ul>
+            <p>Todo esto prepara a tu cuerpo para correr o pelear. Tiene todo el sentido si hay un peligro físico. Pero si estás sentado/a delante del ordenador, toda esa energía no tiene a dónde ir, y la respiración acelerada empieza a producir sus propios síntomas.</p>
+
+            <h2 id="circulo">El círculo vicioso de la respiración y el miedo</h2>
+            <p>Aquí está la clave para entender por qué la respiración es tan importante en la ansiedad. Cuando respiras rápido y más de lo que tu cuerpo necesita (lo que se llama <strong>hiperventilar</strong>, aunque sea de forma leve), expulsas demasiado dióxido de carbono. Eso cambia ligeramente la química de tu sangre y aparecen síntomas que asustan:</p>
+          </article>
+
+          <div class="loop" role="list" aria-label="El círculo vicioso de la ansiedad">
+            <div class="loop-step" role="listitem">
+              <h4>Pensamiento o alarma</h4>
+              <p>«Algo va mal». Una preocupación, un recuerdo o una sensación corporal enciende la alarma.</p>
+            </div>
+            <div class="loop-step" role="listitem">
+              <h4>Respiración rápida y alta</h4>
+              <p>El cuerpo se prepara para huir: respiras más rápido, por la boca y con el pecho.</p>
+            </div>
+            <div class="loop-step" role="listitem">
+              <h4>Baja el CO₂</h4>
+              <p>Aparecen hormigueos en manos o labios, mareo, opresión en el pecho, sensación de irrealidad o de que falta el aire.</p>
+            </div>
+            <div class="loop-step" role="listitem">
+              <h4>Más miedo</h4>
+              <p>«¿Me estará dando algo?». Los síntomas se interpretan como peligro y la alarma sube todavía más.</p>
+            </div>
+            <div class="loop-center">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/></svg>
+              Y vuelta a empezar… salvo que intervengas en la respiración.
+            </div>
+          </div>
+
+          <article class="prose">
+            <p>Lo paradójico es que, en ese momento, <strong>tienes oxígeno de sobra</strong>. La sensación de ahogo no viene de que te falte aire, sino de haber expulsado demasiado CO₂. Por eso, intentar respirar todavía más hondo a menudo empeora las cosas.</p>
+            <p>La buena noticia es que este círculo se puede romper por cualquiera de sus puntos. Y la respiración es uno de los más accesibles: si consigues respirar más lento y más suave, los síntomas físicos empiezan a disminuir, y con ellos, la sensación de peligro.</p>
+
+            <div class="callout calm">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+              <p><strong>Algo que conviene recordar</strong>Los síntomas de una crisis de ansiedad son muy desagradables, pero no son peligrosos y siempre terminan pasando, normalmente en minutos. Aun así, si es la primera vez que te ocurre, o tienes dolor en el pecho, consulta con un médico para descartar otras causas.</p>
+            </div>
+
+            <h2 id="co2">El papel del CO₂: lo que cuenta <em>Respira</em></h2>
+            <p>En el libro, James Nestor dedica un capítulo fascinante a la relación entre el dióxido de carbono y el miedo. Habla del trabajo del neurocientífico Justin Feinstein con personas que tienen dañada la amígdala, la región del cerebro asociada al miedo. Estas personas no sentían miedo ante serpientes, arañas o películas de terror. Sin embargo, cuando inhalaron aire con una alta concentración de CO₂, <strong>sintieron pánico</strong>. El estudio se publicó en <em>Nature Neuroscience</em> en 2013.</p>
+            <p>¿Qué significa esto? Que existe una forma de miedo que no nace de lo que vemos fuera, sino de lo que el cuerpo detecta dentro: el sistema que vigila el CO₂ en la sangre puede disparar por sí solo la sensación de ahogo y alarma. Ya en los años 90, el psiquiatra Donald Klein propuso que en algunas personas con trastorno de pánico este «detector de asfixia» es demasiado sensible y lanza falsas alarmas.</p>
+            <p>Basándose en estas ideas, la investigadora Alicia Meuret y su equipo desarrollaron un entrenamiento respiratorio con capnometría (un aparato que mide el CO₂ del aire exhalado). Enseñaban a las personas con pánico a respirar <strong>más despacio y menos profundo</strong>, para subir poco a poco su CO₂. En sus estudios, este enfoque redujo de forma importante los síntomas de pánico.</p>
+            <p>La lección práctica es muy valiosa: <strong>ante la ansiedad, la respuesta no es más aire, sino un ritmo más lento y suave</strong>.</p>
+
+            <h2 id="por-que">Por qué funciona respirar despacio</h2>
+            <p>La respiración es especial porque es automática, pero también puedes controlarla a voluntad. Es una puerta directa a tu sistema nervioso autónomo. Así actúa:</p>
+            <ul>
+              <li><strong>La exhalación activa el freno.</strong> Cada vez que exhalas, el nervio vago ralentiza un poco tu corazón. Si alargas la exhalación, alargas ese efecto calmante. Es fisiología pura, no sugestión.</li>
+              <li><strong>Tu cerebro «lee» tu respiración.</strong> En 2017, un equipo de Stanford descubrió en ratones un pequeño grupo de neuronas en el centro de control de la respiración que conecta directamente con las áreas del cerebro que regulan el estado de alerta. Cuando respiramos rápido, el cerebro tiende a interpretar que hay que estar en guardia. Cuando respiramos lento, se relaja.</li>
+              <li><strong>Funciona con poco tiempo.</strong> En un estudio de 2023 en Stanford, 5 minutos diarios de suspiro cíclico (dos inhalaciones seguidas y una exhalación larga) durante un mes mejoraron el estado de ánimo y redujeron la frecuencia respiratoria en reposo, con un efecto mayor que el de una meditación mindfulness de la misma duración.</li>
+              <li><strong>Te devuelve el control.</strong> En plena ansiedad, sentir que puedes hacer algo concreto ya es un alivio. La respiración te da una tarea clara para tu mente.</li>
+            </ul>
+          </article>
+
+          <!-- Práctica -->
+          <section id="practica" class="mt-3">
+            <h2>Practica ahora</h2>
+            <p class="lead">Dos ejercicios especialmente útiles para la ansiedad. Pruébalos ahora, cuando estés en calma, para que te salgan solos cuando los necesites.</p>
+            <div class="grid grid-2 mt-2">
+              <div>
+                <div data-breath-player="suspiro" data-compact data-minutes="3" data-show-title></div>
+              </div>
+              <div>
+                <div data-breath-player="exhalacion" data-compact data-minutes="3" data-show-title></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Anclaje -->
+          <section id="anclaje" class="mt-3">
+            <div class="tool" data-tool="grounding">
+              <span class="tag calm">Técnica de anclaje</span>
+              <h2 class="mt-1" style="font-size:1.7rem">5-4-3-2-1: vuelve al presente</h2>
+              <div class="js-ground" aria-live="polite"></div>
+            </div>
+          </section>
+
+          <article class="prose mt-3">
+            <h2 id="crisis">Qué hacer durante una crisis de ansiedad</h2>
+            <p>Guarda estos pasos en el móvil o haz una captura. En un momento difícil no hace falta recordarlo todo: con uno solo ya es suficiente.</p>
+          </article>
+          <ol class="steps mt-2" style="max-width:720px">
+            <li><strong>Nómbralo.</strong> Dite a ti mismo/a: «Esto es ansiedad. Es muy desagradable, pero no es peligrosa. Ya me ha pasado antes y ha pasado».</li>
+            <li><strong>Cierra la boca y respira por la nariz.</strong> Solo con eso ya frenas la respiración y retienes algo más de CO₂.</li>
+            <li><strong>Haz uno o dos suspiros cíclicos.</strong> Dos inhalaciones por la nariz, una exhalación larga y lenta por la boca. Puedes usar el botón «Calma ahora».</li>
+            <li><strong>Alarga la exhalación.</strong> Inhala en 4, exhala en 6 u 8. Suave, sin llenar del todo los pulmones. Como si soplaras una vela sin apagarla.</li>
+            <li><strong>Suelta el cuerpo.</strong> Baja los hombros, separa los dientes, abre las manos. Nota los pies en el suelo.</li>
+            <li><strong>Ancla tus sentidos.</strong> Prueba el 5-4-3-2-1 o describe en voz baja lo que tienes alrededor.</li>
+            <li><strong>Deja que la ola pase.</strong> No luches contra las sensaciones; obsérvalas subir, llegar a su punto más alto y bajar. Siempre bajan.</li>
+          </ol>
+
+          <!-- Mitos -->
+          <section id="mitos" class="mt-3">
+            <h2>Mitos que conviene desmontar</h2>
+            <div class="grid grid-2 mt-2">
+              <div class="card myth">
+                <span class="myth-label">Mito</span>
+                <h3>«Respira hondo» siempre ayuda</h3>
+                <span class="truth-label">Realidad</span>
+                <p>Grandes bocanadas rápidas pueden aumentar la hiperventilación y los síntomas. Lo que calma es respirar <strong>lento y suave</strong>, con una exhalación más larga que la inhalación.</p>
+              </div>
+              <div class="card myth">
+                <span class="myth-label">Mito</span>
+                <h3>Respirar en una bolsa de papel</h3>
+                <span class="truth-label">Realidad</span>
+                <p>Ya no se recomienda. Si los síntomas tienen otra causa (asma, problema cardiaco…) puede ser peligroso, y además suele aumentar la sensación de agobio. Respirar despacio por la nariz consigue lo mismo de forma segura.</p>
+              </div>
+              <div class="card myth">
+                <span class="myth-label">Mito</span>
+                <h3>Si me falta el aire, me falta oxígeno</h3>
+                <span class="truth-label">Realidad</span>
+                <p>En una crisis de ansiedad, el nivel de oxígeno en sangre suele ser normal o incluso alto. La sensación de ahogo viene sobre todo del CO₂ bajo y de la tensión de los músculos respiratorios.</p>
+              </div>
+              <div class="card myth">
+                <span class="myth-label">Mito</span>
+                <h3>Si respiro bien, ya no necesito ayuda</h3>
+                <span class="truth-label">Realidad</span>
+                <p>La respiración es una herramienta estupenda, pero complementa (no sustituye) a la terapia psicológica y, cuando es necesario, al tratamiento médico. Pedir ayuda es un acto de valentía.</p>
+              </div>
+            </div>
+          </section>
+
+          <article class="prose mt-3">
+            <h2 id="dia-a-dia">Un plan amable para el día a día</h2>
+            <p>La ansiedad se trabaja mejor cuando no estás en plena crisis. Igual que un músico ensaya antes del concierto, tú puedes «ensayar» la calma. Algunas ideas:</p>
+            <ul>
+              <li><strong>Cinco minutos al día de práctica lenta.</strong> Respiración coherente o suspiro cíclico, siempre a la misma hora. Es la dosis que ha demostrado efectos en los estudios.</li>
+              <li><strong>Respira por la nariz durante el día.</strong> Revisa de vez en cuando: ¿tienes la boca abierta? ¿los hombros subidos? ¿la mandíbula apretada?</li>
+              <li><strong>Micro-pausas.</strong> Tres respiraciones lentas antes de abrir el correo, al colgar una llamada o al entrar en casa.</li>
+              <li><strong>Muévete.</strong> Caminar, bailar, nadar: el ejercicio físico es uno de los mejores reguladores de la ansiedad, y respirar por la nariz mientras lo haces multiplica el efecto.</li>
+              <li><strong>Revisa la cafeína.</strong> En personas sensibles, el café y las bebidas energéticas pueden imitar o empeorar los síntomas de ansiedad.</li>
+              <li><strong>Protege tu sueño.</strong> Dormir mal aumenta la reactividad emocional. Un 4-7-8 en la cama puede ayudarte a desconectar.</li>
+              <li><strong>Habla de ello.</strong> Con alguien de confianza o con un profesional. La ansiedad crece en silencio y se encoge cuando se comparte.</li>
+            </ul>
+
+            <h2 id="ayuda">Cuándo pedir ayuda profesional</h2>
+            <p>Busca el apoyo de tu médico de cabecera o de un psicólogo si:</p>
+            <ul>
+              <li>La ansiedad interfiere en tu trabajo, tus estudios, tus relaciones o tu descanso.</li>
+              <li>Tienes ataques de pánico repetidos o vives con miedo a que vuelvan.</li>
+              <li>Empiezas a evitar lugares o situaciones por miedo a sentirte mal.</li>
+              <li>Usas alcohol u otras sustancias para calmarte.</li>
+              <li>Te sientes sin esperanza o tienes pensamientos de hacerte daño.</li>
+            </ul>
+            <p>La terapia cognitivo-conductual tiene una eficacia muy bien demostrada en los trastornos de ansiedad, y suele incluir, precisamente, trabajo con la respiración y con el miedo a las sensaciones corporales.</p>
+          </article>
+
+          <div class="callout danger mt-2" style="max-width:720px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+            <p><strong>Si estás en crisis, no estás solo/a</strong>En España puedes llamar al <strong>024</strong>, la línea de atención a la conducta suicida: gratuita, confidencial y disponible las 24 horas. Ante una emergencia, llama al <strong>112</strong>. Si vives en otro país, contacta con tu número local de emergencias.</p>
+          </div>
+
+          <section class="mt-3">
+            <div class="cta-band">
+              <div>
+                <h2>Empieza por cinco minutos</h2>
+                <p>El suspiro cíclico es la práctica con más evidencia para mejorar el ánimo en poco tiempo.</p>
+              </div>
+              <a class="btn btn-lg" href="ejercicios.html#suspiro">Practicar ahora</a>
+            </div>
+          </section>
+
+          <p class="small muted mt-2">Fuentes principales: Feinstein et al., <em>Nature Neuroscience</em> (2013); Klein, <em>Archives of General Psychiatry</em> (1993); Meuret et al. (2008, 2010); Yackle et al., <em>Science</em> (2017); Balban et al., <em>Cell Reports Medicine</em> (2023); Zaccaro et al. (2018). <a href="fuentes.html">Ver todas las fuentes</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="WellBreath, inicio">
+            <img class="brand-mark" src="img/favicon.svg" alt="" width="36" height="36">
+            <span><span class="brand-name">WellBreath</span><span class="brand-tag">Respirar bien, vivir mejor</span></span>
+          </a>
+          <p class="mt-1">Un rincón tranquilo para recuperar algo que haces 20.000 veces al día. Hecho con cariño, basado en ciencia y en las ideas del libro <em>Respira</em>, de James Nestor.</p>
+        </div>
+        <div>
+          <h2>Explora</h2>
+          <ul>
+            <li><a href="habitos.html">Hábitos para respirar mejor</a></li>
+            <li><a href="ejercicios.html">Ejercicios guiados</a></li>
+            <li><a href="ansiedad.html">Ansiedad y respiración</a></li>
+            <li><a href="tdah.html">TDAH y respiración</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Importante</h2>
+          <ul>
+            <li><a href="fuentes.html">Fuentes científicas</a></li>
+            <li><a href="fuentes.html#aviso">Aviso de salud</a></li>
+            <li><a href="fuentes.html#privacidad">Privacidad</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="disclaimer">WellBreath ofrece información divulgativa y ejercicios de bienestar. No sustituye el diagnóstico ni el tratamiento de un profesional sanitario. Si tienes una emergencia, llama al 112. Si piensas en hacerte daño, en España puedes llamar al 024, gratis y a cualquier hora. © <span data-year>2026</span> WellBreath.</p>
+    </div>
+  </footer>
+
+  <button type="button" class="sos-fab" data-open-sos aria-haspopup="dialog">
+    <span class="pulse" aria-hidden="true"></span> Calma ahora
+  </button>
+
+  <script src="js/exercises.js" defer></script>
+  <script src="js/breath.js" defer></script>
+  <script src="js/tools.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
