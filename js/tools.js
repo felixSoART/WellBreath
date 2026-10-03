@@ -12,6 +12,33 @@
   const fmt1 = (n) => (Math.round(n * 10) / 10).toFixed(1).replace('.', ',');
   const shortDate = (iso) => new Date(iso).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' });
 
+
+  /* Dibuja la «huella» de un ejercicio: sube al inhalar, se mantiene, baja al exhalar */
+  function waveSvg(ex) {
+    const built = ex.build(ex.defaults);
+    let phases = built.sequence ? built.sequence.slice(0, 10) : built.cycle.concat(built.cycle);
+    const total = phases.reduce((a, p) => a + p.secs, 0);
+    const W = 88, H = 30, top = 4, bottom = 26;
+    const yOf = (sc) => bottom - ((sc - 0.42) / 0.58) * (bottom - top);
+    let t = 0, sc = 0.42;
+    const pts = [[0, yOf(sc)]];
+    phases.forEach((p) => {
+      const from = sc;
+      let to = from;
+      if (p.type === 'in' || p.type === 'in2') to = p.to != null ? p.to : 1;
+      else if (p.type === 'out') to = p.to != null ? p.to : 0.42;
+      for (let k = 1; k <= 8; k++) {
+        const f = k / 8;
+        const e = 0.5 - Math.cos(Math.PI * f) / 2;
+        pts.push([((t + p.secs * f) / total) * W, yOf(from + (to - from) * e)]);
+      }
+      t += p.secs; sc = to;
+    });
+    const d = pts.map((q, i) => `${i ? 'L' : 'M'}${q[0].toFixed(1)} ${q[1].toFixed(1)}`).join('');
+    const dur = Math.min(total, 24).toFixed(1);
+    return `<svg class="ex-wave" viewBox="0 0 ${W} ${H}" aria-hidden="true"><path d="${d}"/><circle class="dot" r="3.4"><animateMotion dur="${dur}s" repeatCount="indefinite" path="${d}"/></circle></svg>`;
+  }
+
   /* ======================================================================
      Biblioteca de ejercicios (página Ejercicios)
      ====================================================================== */
@@ -49,15 +76,13 @@
         b.type = 'button'; b.className = 'ex-card'; b.dataset.id = id;
         b.setAttribute('aria-pressed', String(id === current));
         b.innerHTML = `
-          <span class="ex-pattern" aria-hidden="true">${esc(ex.pattern)}</span>
-          <span>
-            <h3>${esc(ex.name)}</h3>
-            <p>${esc(ex.short)}</p>
-            <span class="tags">${ex.categories.map((c) => `<span class="tag${c === 'ansiedad' ? ' calm' : (c === 'tdah' || c === 'foco') ? ' focus' : c === 'dormir' ? ' accent' : ''}">${esc(window.WB_CATEGORIES[c])}</span>`).join('')}</span>
-          </span>`;
+          <span class="ex-head"><span class="ex-pattern" aria-hidden="true">${esc(ex.pattern)}</span>${waveSvg(ex)}</span>
+          <h3>${esc(ex.name)}</h3>
+          <p>${esc(ex.short)}</p>
+          <span class="tags">${ex.categories.map((c) => `<span class="tag${c === 'ansiedad' ? ' calm' : (c === 'tdah' || c === 'foco') ? ' focus' : c === 'dormir' ? ' accent' : ''}">${esc(window.WB_CATEGORIES[c])}</span>`).join('')}</span>`;
         b.addEventListener('click', () => {
           select(id, true);
-          if (window.matchMedia('(max-width: 940px)').matches) playerEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (window.matchMedia('(max-width: 1000px)').matches) playerEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
         list.appendChild(b);
       });
@@ -398,7 +423,7 @@
     function nudge() {
       const text = NUDGES[Math.floor(Math.random() * NUDGES.length)];
       if (window.WB_AUDIO) { window.WB_AUDIO.chime(523, 1.8, 0.07); setTimeout(() => window.WB_AUDIO.chime(392, 2, 0.06), 300); }
-      if (WB.toast) WB.toast(`🌬️ ${text}`, 12000);
+      if (WB.toast) WB.toast(text, 12000, { soplo: 'calm', color: 'honey' });
       if ('Notification' in window && Notification.permission === 'granted' && document.hidden) {
         try { new Notification('Pausa para respirar', { body: text, icon: 'img/favicon.svg', tag: 'wb-breath' }); } catch (e) { /* sin notificación */ }
       }
@@ -436,9 +461,9 @@
   }
 
   /* ======================================================================
-     Estadísticas y ejercicio del día
+     Tu rincón: estadísticas, racha, planta, semana, ánimo y sugerencias
      ====================================================================== */
-  // Anima los números de 0 a su valor final
+  // Anima los números desde su valor actual hasta el final
   function countUp(el, target) {
     const from = Number(el.textContent) || 0;
     if (from === target || matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = target; return; }
@@ -451,7 +476,7 @@
     requestAnimationFrame(step);
   }
 
-  function renderStats() {
+  function getStats() {
     const stats = store.get(WB.STATS_KEY, { days: {}, sessions: 0 });
     const days = stats.days || {};
     const today = WB.todayKey();
@@ -461,36 +486,119 @@
     const d = new Date();
     if (!days[today]) d.setDate(d.getDate() - 1); // la racha sigue viva si hoy aún no has practicado
     while (days[WB.todayKey(d)]) { streak++; d.setDate(d.getDate() - 1); }
-    const values = { today: Math.round((days[today] || 0) / 60), week: Math.round(week / 60), streak, sessions: stats.sessions || 0 };
-    $$('[data-stat]').forEach((el) => countUp(el, values[el.dataset.stat]));
-    $$('[data-stat-message]').forEach((el) => {
-      if (!values.sessions) el.textContent = 'Todavía no has hecho ninguna sesión. ¿Empezamos con una de un minuto?';
-      else if (values.today) el.textContent = 'Hoy ya has dedicado un rato a respirar. Eso es cuidarse.';
-      else if (streak) el.textContent = `Llevas ${streak} ${streak === 1 ? 'día' : 'días'} seguidos. Una sesión corta hoy mantiene la racha.`;
-      else el.textContent = 'Cada día es un buen día para volver. Sin culpa: solo empieza.';
+    return { days, today, practicedToday: !!days[today], todayMin: Math.round((days[today] || 0) / 60), week: Math.round(week / 60), streak, sessions: stats.sessions || 0 };
+  }
+
+  // Momento del día → saludo y ejercicio sugerido
+  function dayMoment() {
+    const h = new Date().getHours();
+    if (h >= 6 && h < 12) return { greet: 'Buenos días', id: 'abdominal', why: 'Para empezar el día desde la calma: despierta tu diafragma.', soplo: 'hello', acc: 'sparkles', color: 'honey' };
+    if (h >= 12 && h < 16) return { greet: 'Buenas tardes', id: 'reset', why: 'A mitad del día, un minuto para recolocar la atención.', soplo: 'focused', acc: 'spark', color: 'sky' };
+    if (h >= 16 && h < 21) return { greet: 'Buenas tardes', id: 'coherente', why: 'Para soltar la tensión acumulada y cambiar de modo.', soplo: 'calm', acc: '', color: 'leaf' };
+    return { greet: 'Buenas noches', id: '478', why: 'Para preparar el sueño con una exhalación larga.', soplo: 'sleepy', acc: 'moon', color: 'lilac' };
+  }
+
+  function renderNook() {
+    const st = getStats();
+    const EX = window.WB_EXERCISES;
+    $$('[data-stat]').forEach((el) => countUp(el, { today: st.todayMin, week: st.week, streak: st.streak, sessions: st.sessions }[el.dataset.stat]));
+
+    // Píldora de la cabecera: tu racha
+    $$('[data-streak]').forEach((el) => { el.textContent = st.streak; });
+    $$('.nook-pill').forEach((el) => el.setAttribute('title', st.streak ? `Tu racha: ${st.streak} ${st.streak === 1 ? 'día' : 'días'} · ver tu planta` : 'Tu planta y tu racha'));
+
+    // Planta
+    const level = WB.plantLevel ? WB.plantLevel(st.sessions) : 0;
+    const L = WB.PLANT_LEVELS || [];
+    $$('[data-plant] svg').forEach((svg) => { if (Number(svg.dataset.level) !== level) WB.setPlantLevel(svg, level, svg.dataset.level != null ? Number(svg.dataset.level) : null); });
+    $$('[data-plant-name]').forEach((el) => { el.textContent = L[level] ? L[level].name : ''; });
+    $$('[data-plant-level]').forEach((el) => { el.textContent = `Nivel ${level + 1} de ${L.length}`; });
+    $$('[data-plant-text]').forEach((el) => { el.textContent = L[level] ? L[level].text : ''; });
+    const next = L[level + 1];
+    const prevMin = L[level] ? L[level].min : 0;
+    $$('[data-plant-next]').forEach((el) => {
+      if (!next) { el.textContent = '¡Has llegado al máximo! Tu planta te lo agradece.'; return; }
+      const left = next.min - st.sessions;
+      el.textContent = `${left} ${left === 1 ? 'sesión' : 'sesiones'} más para: ${next.name}`;
+    });
+    $$('[data-plant-progress]').forEach((el) => {
+      el.style.width = next ? `${Math.round(((st.sessions - prevMin) / (next.min - prevMin)) * 100)}%` : '100%';
+    });
+
+    // Títulos del rincón
+    const m = dayMoment();
+    $$('[data-nook-title]').forEach((el) => {
+      if (!st.sessions) el.textContent = 'Tu planta te está esperando';
+      else if (st.practicedToday) el.textContent = 'Hoy ya has respirado. ¡Bien!';
+      else if (st.streak) el.textContent = `Llevas ${st.streak} ${st.streak === 1 ? 'día' : 'días'} seguidos`;
+      else el.textContent = 'Qué alegría verte de nuevo';
+    });
+    $$('[data-nook-text]').forEach((el) => {
+      if (!st.sessions) el.textContent = 'Cada sesión de respiración, aunque sea de un minuto, hace crecer tu planta. Aquí verás también tu semana y cómo te sienta practicar.';
+      else if (st.practicedToday) el.textContent = 'Tu planta lo ha notado. Si te apetece, otra sesión corta más tarde también suma.';
+      else if (st.streak) el.textContent = 'Una sesión corta hoy mantiene la racha viva. Y si un día no puedes, no pasa nada: la planta no se marchita.';
+      else el.textContent = 'Sin culpa ni rachas que recuperar: tu planta sigue aquí, lista para seguir creciendo contigo.';
+    });
+
+    // Semana
+    $$('[data-week]').forEach((wrap) => {
+      const names = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
+      let html = '';
+      for (let i = 6; i >= 0; i--) {
+        const d = new Date(); d.setDate(d.getDate() - i);
+        const secs = st.days[WB.todayKey(d)] || 0;
+        const mins = Math.round(secs / 60);
+        html += `<div class="d${secs ? ' on' : ''}${i === 0 ? ' today' : ''}" title="${secs ? `${mins || '<1'} min` : 'Sin práctica'}">${names[d.getDay()]}<i>${secs ? (mins || '·') : ''}</i></div>`;
+      }
+      wrap.innerHTML = html;
+    });
+
+    // Cómo te sienta respirar
+    const moods = store.get(WB.MOODS_KEY, []);
+    $$('[data-mood-summary]').forEach((el) => {
+      const pairs = moods.filter((x) => x.pre != null && x.post != null);
+      if (!moods.length) { el.innerHTML = '<p class="muted mb-0">Al terminar una sesión, cuéntale a Soplo cómo te sientes. Aquí verás cómo cambia tu ánimo al respirar.</p>'; return; }
+      const better = pairs.filter((x) => x.post > x.pre).length;
+      const scale = WB.MOOD_SCALE || [];
+      const face = (v) => { const sm = scale.find((q) => q.v === v); return sm ? WB.soplo({ mood: sm.mood, color: sm.color }) : ''; };
+      const lastFive = moods.slice(-5).reverse();
+      el.innerHTML = `
+        <p class="mb-0">${pairs.length ? `Terminaste mejor de lo que empezaste en <strong>${better} de ${pairs.length}</strong> ${pairs.length === 1 ? 'sesión' : 'sesiones'}.` : 'Así te has sentido al terminar tus últimas sesiones:'}</p>
+        <div class="mood-pairs">${lastFive.map((x) => `<span class="mood-pair" title="${esc(EX[x.ex] ? EX[x.ex].name : '')}">${x.pre != null ? face(x.pre) + '<span class="arrow">→</span>' : ''}${face(x.post)}</span>`).join('')}</div>`;
+    });
+
+    // Sugerencia del momento y «continúa donde lo dejaste»
+    const last = store.get(WB.LAST_KEY, null);
+    $$('[data-suggest]').forEach((el) => {
+      const ex = EX[m.id];
+      const lastEx = last && EX[last.id] && last.id !== m.id ? EX[last.id] : null;
+      el.innerHTML = `
+        <div class="suggest">
+          <div class="s-soplo">${WB.soplo({ mood: m.soplo, acc: m.acc, color: m.color })}</div>
+          <div>
+            <span class="tag coral">${m.greet}: te propongo</span>
+            <h3 class="mt-1">${esc(ex.name)}</h3>
+            <p>${esc(m.why)}</p>
+            <div class="btn-row">
+              <a class="btn btn-sm" href="ejercicios.html#${m.id}">Practicar ahora <span class="arrow">→</span></a>
+              ${lastEx ? `<a class="btn btn-sm btn-ghost" href="ejercicios.html#${last.id}">Repetir: ${esc(lastEx.name)}</a>` : ''}
+            </div>
+          </div>
+        </div>`;
     });
   }
 
-  function initExerciseOfDay() {
-    const el = $('[data-exercise-of-day]');
-    if (!el) return;
-    const plan = [
-      ['abdominal', 'Domingo: vuelve a lo básico y despierta tu diafragma.'],
-      ['coherente', 'Lunes: empieza la semana con 5 minutos a tu ritmo coherente.'],
-      ['exhalacion', 'Martes: alarga tus exhalaciones y suelta tensión.'],
-      ['cuadrada', 'Miércoles: a mitad de semana, céntrate con la respiración cuadrada.'],
-      ['suspiro', 'Jueves: el suspiro cíclico, la dosis de calma más estudiada.'],
-      ['ligera', 'Viernes: aprende a respirar menos (y mejor).'],
-      ['478', 'Sábado: regálate un 4-7-8 antes de dormir.']
-    ];
-    const [id, text] = plan[new Date().getDay()];
-    const ex = window.WB_EXERCISES[id];
-    el.innerHTML = `
-      <span class="tag">Ejercicio del día</span>
-      <h3 class="mt-1" style="font-size:1.6rem">${esc(ex.name)}</h3>
-      <p>${esc(text)}</p>
-      <p class="muted small">${esc(ex.short)}</p>
-      <a class="btn" href="ejercicios.html#${id}">Practicarlo ahora</a>`;
+  // Si la planta sube de nivel tras una sesión, lo celebramos
+  function checkLevelUp() {
+    if (!WB.plantLevel) return;
+    const st = getStats();
+    const level = WB.plantLevel(st.sessions);
+    const saved = store.get('wb-plant-level', null);
+    store.set('wb-plant-level', level);
+    if (saved == null || level <= saved) return;
+    const name = WB.PLANT_LEVELS[level].name;
+    if (WB.toast) WB.toast(`¡Tu planta ha crecido! Ahora: ${name}.`, 9000, { plant: level, link: { href: 'index.html#rincon', text: 'Verla' } });
+    $$('.nook-pill').forEach((el) => { el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); });
   }
 
   function init() {
@@ -501,9 +609,10 @@
     $$('[data-tool="habits"]').forEach(initHabits);
     $$('[data-tool="grounding"]').forEach(initGrounding);
     $$('[data-tool="reminder"]').forEach(initReminder);
-    initExerciseOfDay();
-    renderStats();
-    document.addEventListener('wb:practice', renderStats);
+    if (store.get('wb-plant-level', null) == null && WB.plantLevel) store.set('wb-plant-level', WB.plantLevel(getStats().sessions));
+    renderNook();
+    document.addEventListener('wb:practice', () => { checkLevelUp(); renderNook(); });
+    document.addEventListener('wb:mood', renderNook);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

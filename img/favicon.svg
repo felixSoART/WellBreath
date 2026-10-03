@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-  <defs>
-    <clipPath id="wb-clip"><circle cx="30.5" cy="24" r="12.5"/></clipPath>
-  </defs>
-  <circle cx="18.5" cy="24" r="15.5" fill="#1a73e8"/>
-  <circle cx="30.5" cy="24" r="12.5" fill="#fbbc04"/>
-  <circle cx="18.5" cy="24" r="15.5" fill="#34a853" clip-path="url(#wb-clip)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="8 2 106 110">
+  <path d="M60 20C87 20 105 41 105 68C105 93 86 107 60 107C34 107 15 93 15 68C15 41 33 20 60 20Z" fill="#f0896b"/>
+  <path d="M96 33c6-1 11 3 10.5 8.5c-.4 4.6-5.6 6.4-8.4 3.2c-1.9-2.2-.2-5.3 2.3-4.6M96 33c-4 .7-7.5 0-10-2" fill="none" stroke="#a16256" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#ff9aad" opacity=".6"><ellipse cx="33.5" cy="75" rx="6.5" ry="4"/><ellipse cx="86.5" cy="75" rx="6.5" ry="4"/></g>
+  <ellipse cx="46" cy="63" rx="4.6" ry="6" fill="#1f2433"/><ellipse cx="74" cy="63" rx="4.6" ry="6" fill="#1f2433"/>
+  <circle cx="47.7" cy="60.6" r="1.5" fill="#fff"/><circle cx="75.7" cy="60.6" r="1.5" fill="#fff"/>
+  <path d="M53 77Q60 83.5 67 77" fill="none" stroke="#1f2433" stroke-width="3.4" stroke-linecap="round"/>
 </svg>
