@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#2c7a6b">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Nunito:ital,wght@0,400..800;1,400..600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script>
     (function () {
@@ -19,13 +19,13 @@
   <title>Hábitos para respirar mejor · WellBreath</title>
   <meta name="description" content="Las claves del libro Respira de James Nestor explicadas con cariño y respaldadas por la ciencia: nariz, ritmo lento, respirar menos, exhalar, masticar y dormir mejor. Con test y registro de hábitos.">
 </head>
-<body>
+<body class="theme-green has-chapters">
   <a class="skip-link" href="#main">Saltar al contenido</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="WellBreath, inicio">
-        <img class="brand-mark" src="img/favicon.svg" alt="" width="36" height="36">
-        <span><span class="brand-name">WellBreath</span><span class="brand-tag">Respirar bien, vivir mejor</span></span>
+        <img class="brand-mark" src="img/favicon.svg" alt="" width="44" height="44">
+        <span><span class="brand-name">Well<span>Breath</span></span><span class="brand-tag">Respirar bien, vivir mejor</span></span>
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Principal">
         <ul>
@@ -47,60 +47,95 @@
     </div>
   </header>
 
+  <nav class="chapter-nav" aria-label="Capítulos de la página">
+    <ol>
+      <li><a href="#test">¿Cómo respiras?</a></li>
+      <li><a href="#historia">La historia</a></li>
+      <li><a href="#nariz">1 · Nariz</a></li>
+      <li><a href="#lento">2 · Lento</a></li>
+      <li><a href="#menos">3 · Menos</a></li>
+      <li><a href="#exhala">4 · Exhala</a></li>
+      <li><a href="#mastica">5 · Mastica</a></li>
+      <li><a href="#noche">6 · De noche</a></li>
+      <li><a href="#intensas">Técnicas intensas</a></li>
+      <li><a href="#herramientas">Mídete</a></li>
+      <li><a href="#registro">Mis hábitos</a></li>
+    </ol>
+  </nav>
+
   <main id="main">
-    <section class="page-hero">
-      <div class="container">
-        <span class="eyebrow">Hábitos</span>
-        <h1>Respirar mejor, cada día</h1>
-        <p class="lead">No se trata de añadir otra obligación a tu lista. Se trata de recuperar, poco a poco, la forma de respirar con la que naciste. Aquí tienes las claves del libro <em>Respira</em>, lo que dice la ciencia de cada una y pequeños gestos para empezar hoy.</p>
+    <section class="screen tint page-hero">
+      <div class="container hero-grid">
+        <div class="stagger">
+          <span class="eyebrow"><span class="dot"></span>Hábitos</span>
+          <h1>Respirar mejor, cada día</h1>
+          <p class="lead">No se trata de añadir otra obligación a tu lista. Se trata de recuperar, poco a poco, la forma de respirar con la que naciste. Aquí tienes las claves del libro <em>Respira</em>, lo que dice la ciencia de cada una y pequeños gestos para empezar hoy.</p>
+          <div class="btn-row mt-2">
+            <a class="btn btn-lg" href="#test">Hacer el test (2 min)</a>
+            <a class="btn btn-ghost btn-lg" href="#nariz">Ir a las claves</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal" aria-hidden="true">
+          <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span>
+          <span class="core"><span>Respira</span></span>
+        </div>
       </div>
     </section>
 
-    <section class="section-tight">
-      <div class="container article-layout">
-        <aside class="toc" aria-label="Índice">
-          <h2>En esta página</h2>
-          <ol>
-            <li><a href="#test">¿Cómo respiras?</a></li>
-            <li><a href="#historia">La historia de Respira</a></li>
-            <li><a href="#nariz">1. Por la nariz</a></li>
-            <li><a href="#lento">2. Más lento</a></li>
-            <li><a href="#menos">3. Menos</a></li>
-            <li><a href="#exhala">4. Exhala del todo</a></li>
-            <li><a href="#mastica">5. Mastica</a></li>
-            <li><a href="#noche">6. De noche</a></li>
-            <li><a href="#intensas">Técnicas intensas</a></li>
-            <li><a href="#herramientas">Mídete</a></li>
-            <li><a href="#registro">Mis hábitos de hoy</a></li>
-          </ol>
-        </aside>
+    <!-- Test -->
+    <section class="screen" id="test">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span class="dot"></span>2 minutos</span>
+          <h2>¿Cómo respiras ahora?</h2>
+          <p class="lead">Antes de cambiar nada, conviene saber de dónde partes. Responde con sinceridad: nadie te va a juzgar y los resultados no salen de tu pantalla.</p>
+        </div>
+        <div class="tool reveal" data-tool="quiz">
+          <form>
+            <div class="js-quiz-questions"></div>
+            <div class="center mt-2"><button type="submit" class="btn btn-lg">Ver mis recomendaciones</button></div>
+          </form>
+          <div class="tool-result js-quiz-result" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
 
-        <div>
-          <!-- Test -->
-          <section id="test" class="tool" data-tool="quiz">
-            <span class="tag accent">2 minutos</span>
-            <h2 class="mt-1" style="font-size:1.7rem">¿Cómo respiras ahora?</h2>
-            <p>Antes de cambiar nada, conviene saber de dónde partes. Responde con sinceridad; nadie te va a juzgar (y los resultados no salen de tu pantalla).</p>
-            <form>
-              <div class="js-quiz-questions"></div>
-              <button type="submit" class="btn mt-2">Ver mis recomendaciones</button>
-            </form>
-            <div class="tool-result js-quiz-result" aria-live="polite"></div>
-          </section>
-
-          <article class="prose mt-3">
-            <h2 id="historia">La historia detrás de <em>Respira</em></h2>
+    <!-- Historia -->
+    <section class="screen alt" id="historia">
+      <div class="container">
+        <div class="chapter-head reveal">
+          <span class="eyebrow"><span class="dot"></span>El origen</span>
+          <h2>La historia detrás de <em>Respira</em></h2>
+          <p class="lead">Un periodista cansado, una clase de respiración y una investigación de años que acabó convertida en libro.</p>
+        </div>
+        <div class="chapter-body">
+          <div class="prose reveal">
             <p>James Nestor no era un experto en respiración. Era un periodista con neumonías recurrentes, bronquitis y la sensación de estar siempre algo cansado. Un médico le sugirió que probara a hacer una clase de respiración, y aquella clase le cambió la vida. Así empezó una investigación de años que acabó convertida en el libro <em>Respira: la nueva ciencia de un arte olvidado</em>.</p>
             <p>Uno de los momentos más llamativos del libro es un experimento consigo mismo. Junto al especialista en respiración Anders Olsson, y bajo la supervisión de un rinólogo de la Universidad de Stanford, se tapó la nariz durante diez días para respirar únicamente por la boca. Los resultados fueron claros: <strong>su tensión arterial subió, sus ronquidos se dispararon, empezó a tener episodios de apnea del sueño y se sentía agotado y ansioso</strong>. Cuando volvió a respirar por la nariz, la mayoría de esas medidas mejoraron en pocos días.</p>
             <p>Es un experimento de dos personas, no un ensayo clínico. Pero ilustra muy bien algo que la ciencia lleva décadas observando: la forma en que respiramos influye en el sueño, el estado de ánimo, la presión arterial y hasta en la forma de nuestra cara.</p>
-
-            <div class="callout">
+          </div>
+          <aside class="chapter-aside reveal" style="--d:.15s">
+            <div class="fact"><b>10 días</b><span>respirando solo por la boca en el experimento de Stanford</span></div>
+            <div class="callout ok">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
-              <p><strong>Una nota honesta</strong>Algunas ideas del libro están muy bien respaldadas por la investigación (respirar por la nariz, respirar lento, alargar la exhalación). Otras son prometedoras pero aún tienen poca evidencia. Te lo iremos indicando para que decidas con información.</p>
+              <p><strong>Una nota honesta</strong>Algunas ideas del libro están muy bien respaldadas por la investigación (respirar por la nariz, respirar lento, alargar la exhalación). Otras son prometedoras pero aún tienen poca evidencia. Te lo indicamos en cada caso.</p>
             </div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-            <h2 id="nariz">1. Respira por la nariz</h2>
-            <p>Tu nariz es una pequeña obra de ingeniería. Cuando el aire entra por ella:</p>
+    <!-- 1 Nariz -->
+    <section class="screen" id="nariz">
+      <div class="container">
+        <div class="chapter-head reveal">
+          <span class="chapter-num">1</span>
+          <h2>Respira por la nariz</h2>
+          <p class="lead">Tu nariz es una pequeña obra de ingeniería. Volver a usarla es el cambio más sencillo y potente que puedes hacer.</p>
+        </div>
+        <div class="chapter-body">
+          <div class="prose reveal">
+            <p>Cuando el aire entra por la nariz:</p>
             <ul>
               <li><strong>Se filtra</strong>: los pelillos y el moco atrapan polvo, polen y microbios.</li>
               <li><strong>Se calienta y humedece</strong>, para que llegue a los pulmones en las mejores condiciones.</li>
@@ -108,110 +143,207 @@
               <li><strong>Encuentra más resistencia</strong> que por la boca, y eso hace que respires más despacio y de forma más profunda, con el diafragma.</li>
             </ul>
             <p>Respirar por la boca de forma habitual, en cambio, se asocia con más ronquidos, sequedad de boca, peor calidad del sueño y, en niños, con cambios en el desarrollo de la cara y la mandíbula.</p>
-            <div class="try-it"><b>Pruébalo hoy:</b> mientras lees esto, cierra la boca, deja que la lengua descanse entera contra el paladar y respira suavemente por la nariz. Esa es tu posición de reposo ideal. Ponte una nota en el ordenador que diga simplemente «nariz».</div>
+          </div>
+          <aside class="chapter-aside reveal" style="--d:.15s">
+            <div class="try-it"><p>Mientras lees esto, cierra la boca, deja que la lengua descanse entera contra el paladar y respira suavemente por la nariz. Esa es tu posición de reposo ideal. Ponte una nota en el ordenador que diga simplemente «nariz».</p></div>
             <div class="callout warn">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
-              <p><strong>¿Tienes la nariz siempre tapada?</strong>Una congestión crónica merece una visita al médico o al otorrino (alergias, desviación de tabique, pólipos…). Respirar por la nariz con más frecuencia suele ayudar a que se vaya abriendo, pero no fuerces si no puedes.</p>
+              <p><strong>¿Nariz siempre tapada?</strong>Una congestión crónica merece una visita al médico o al otorrino (alergias, desviación de tabique, pólipos…). Respirar por la nariz más a menudo suele ayudar a que se vaya abriendo, pero no fuerces si no puedes.</p>
             </div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-            <h2 id="lento">2. Respira más lento</h2>
+    <!-- 2 Lento -->
+    <section class="screen alt" id="lento">
+      <div class="container">
+        <div class="chapter-head reveal">
+          <span class="chapter-num">2</span>
+          <h2>Respira más lento</h2>
+          <p class="lead">Unas 5 o 6 respiraciones por minuto: el ritmo en el que corazón, presión arterial y respiración se sincronizan.</p>
+        </div>
+        <div class="chapter-body">
+          <div class="prose reveal">
             <p>Durante sus años de investigación, Nestor encontró algo curioso: oraciones y prácticas de culturas muy distintas (el rosario, ciertos mantras del yoga, cantos de meditación) llevan de forma natural a un ritmo de unas <strong>5 o 6 respiraciones por minuto</strong>. Un estudio publicado en el <em>British Medical Journal</em> en 2001 comprobó que rezar el rosario en latín o recitar un mantra sincronizaba el ritmo cardiaco, la presión arterial y la respiración en torno a esa frecuencia.</p>
             <p>En el libro se describe como «la respiración perfecta»: inhalar unos 5,5 segundos y exhalar otros 5,5. A ese ritmo aumenta la variabilidad de la frecuencia cardiaca (la capacidad del corazón de adaptarse), un marcador relacionado con la resiliencia al estrés y la salud cardiovascular. Es el principio que hay detrás del <em>biofeedback</em> de variabilidad cardiaca, una técnica con bastante respaldo científico.</p>
-            <div class="try-it"><b>Pruébalo hoy:</b> 5 minutos de <a href="ejercicios.html#coherente">respiración coherente</a>. Si 5,5 segundos se te hacen largos, empieza con 4 y ve subiendo. No hay prisa.</div>
+          </div>
+          <aside class="chapter-aside reveal" style="--d:.15s">
+            <div class="fact"><b>5,5 s</b><span>para inhalar y otros 5,5 para exhalar: la «respiración perfecta» del libro</span></div>
+            <div class="try-it"><p>5 minutos de <a href="ejercicios.html#coherente">respiración coherente</a>. Si 5,5 segundos se te hacen largos, empieza con 4 y ve subiendo. No hay prisa.</p></div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-            <h2 id="menos">3. Respira menos</h2>
-            <p>Esta es quizá la idea más contraintuitiva del libro. Pensamos que respirar mucho y hondo es sano, pero la mayoría de la gente <strong>respira más aire del que necesita</strong>, sobre todo con estrés.</p>
-            <p>¿Por qué importa? Porque el dióxido de carbono (CO₂) no es solo un desecho. Lo necesitamos para que la hemoglobina suelte el oxígeno a los tejidos: es lo que se conoce como <strong>efecto Bohr</strong>. Si respiras de más, expulsas demasiado CO₂ y, paradójicamente, tus células reciben el oxígeno con más dificultad. Por eso a veces, cuanto más «aire» intentas meter, peor te sientes.</p>
+    <!-- 3 Menos -->
+    <section class="screen" id="menos">
+      <div class="container">
+        <div class="chapter-head reveal">
+          <span class="chapter-num">3</span>
+          <h2>Respira menos</h2>
+          <p class="lead">La idea más contraintuitiva del libro: la mayoría respiramos más aire del que necesitamos, sobre todo con estrés.</p>
+        </div>
+        <div class="chapter-body">
+          <div class="prose reveal">
+            <p>Pensamos que respirar mucho y hondo es sano. Pero el dióxido de carbono (CO₂) no es solo un desecho: lo necesitamos para que la hemoglobina suelte el oxígeno a los tejidos. Es lo que se conoce como <strong>efecto Bohr</strong>. Si respiras de más, expulsas demasiado CO₂ y, paradójicamente, tus células reciben el oxígeno con más dificultad. Por eso a veces, cuanto más «aire» intentas meter, peor te sientes.</p>
             <p>El método Buteyko, al que Nestor dedica parte del libro, trabaja justamente esto: aprender a respirar de forma ligera, silenciosa y por la nariz. La evidencia científica más sólida para este método está en el asma, donde varios estudios han mostrado mejoras en los síntomas y en el uso de medicación de rescate.</p>
-            <div class="try-it"><b>Pruébalo hoy:</b> pon la mano bajo la nariz. Respira tan suave que apenas notes el aire en los dedos. Mantenlo un minuto. O prueba el ejercicio <a href="ejercicios.html#ligera">Respirar menos</a>.</div>
+          </div>
+          <aside class="chapter-aside reveal" style="--d:.15s">
+            <div class="try-it"><p>Pon la mano bajo la nariz. Respira tan suave que apenas notes el aire en los dedos. Mantenlo un minuto. O prueba el ejercicio <a href="ejercicios.html#ligera">Respirar menos</a>.</p></div>
+            <div class="fact"><b>CO₂</b><span>no es solo un desecho: ayuda a que el oxígeno llegue a tus células</span></div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-            <h2 id="exhala">4. Exhala del todo</h2>
-            <p>Solemos fijarnos en la inhalación, pero la exhalación es igual de importante. Si no vacías bien los pulmones, el aire viejo se queda dentro, la respiración se vuelve corta y alta y el diafragma pierde recorrido.</p>
+    <!-- 4 Exhala -->
+    <section class="screen alt" id="exhala">
+      <div class="container">
+        <div class="chapter-head reveal">
+          <span class="chapter-num">4</span>
+          <h2>Exhala del todo</h2>
+          <p class="lead">Solemos fijarnos en la inhalación, pero la exhalación es la fase que más calma al sistema nervioso.</p>
+        </div>
+        <div class="chapter-body">
+          <div class="prose reveal">
+            <p>Si no vacías bien los pulmones, el aire viejo se queda dentro, la respiración se vuelve corta y alta y el diafragma pierde recorrido.</p>
             <p>En <em>Respira</em> se cuenta la historia de Carl Stough, un director de coro que en los años 50 empezó a enseñar a exhalar por completo a pacientes con enfisema y, más tarde, a atletas olímpicos. Sus resultados, aunque anecdóticos, inspiraron a muchos terapeutas. Hoy sabemos además que <strong>la exhalación lenta es la fase que más calma al sistema nervioso</strong>: en cada exhalación el nervio vago frena un poquito el corazón.</p>
-            <div class="try-it"><b>Pruébalo hoy:</b> exhala despacio contando hasta 6… y cuando creas que has terminado, suelta un poquito más de aire, sin tensión. Deja que la siguiente inhalación entre sola. Repite tres veces.</div>
+          </div>
+          <aside class="chapter-aside reveal" style="--d:.15s">
+            <div class="try-it"><p>Exhala despacio contando hasta 6… y cuando creas que has terminado, suelta un poquito más de aire, sin tensión. Deja que la siguiente inhalación entre sola. Repite tres veces.</p></div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-            <h2 id="mastica">5. Mastica (sí, de verdad)</h2>
-            <p>Uno de los capítulos más sorprendentes del libro explica cómo los cráneos humanos han cambiado en los últimos siglos. Con la llegada de los alimentos blandos y procesados, masticamos mucho menos, y eso se ha asociado a mandíbulas más pequeñas, dientes apiñados y vías respiratorias más estrechas, lo que favorece los ronquidos y la apnea del sueño.</p>
+    <!-- 5 Mastica -->
+    <section class="screen" id="mastica">
+      <div class="container">
+        <div class="chapter-head reveal">
+          <span class="chapter-num">5</span>
+          <h2>Mastica (sí, de verdad)</h2>
+          <p class="lead">Uno de los capítulos más sorprendentes del libro: cómo lo que comemos ha cambiado la forma de nuestras caras.</p>
+        </div>
+        <div class="chapter-body">
+          <div class="prose reveal">
+            <p>Con la llegada de los alimentos blandos y procesados, masticamos mucho menos, y eso se ha asociado a mandíbulas más pequeñas, dientes apiñados y vías respiratorias más estrechas, lo que favorece los ronquidos y la apnea del sueño.</p>
             <p>En niños, la masticación y la respiración nasal influyen en el desarrollo de la mandíbula y el paladar. En adultos, la evidencia de que masticar más cambie la forma de la cara es limitada, así que tómalo como una pista interesante, no como una promesa. Lo que sí sabemos es que una buena postura de la lengua (apoyada en el paladar) y una boca cerrada en reposo ayudan a mantener la respiración nasal.</p>
-            <div class="try-it"><b>Pruébalo hoy:</b> incluye alimentos que haya que masticar (verduras crudas, frutos secos, pan con corteza) y mastica despacio. Tu digestión también lo agradecerá. Si tienes niños, consulta con su dentista u ortodoncista sobre la respiración bucal.</div>
+          </div>
+          <aside class="chapter-aside reveal" style="--d:.15s">
+            <div class="try-it"><p>Incluye alimentos que haya que masticar (verduras crudas, frutos secos, pan con corteza) y mastica despacio. Si tienes niños, consulta con su dentista u ortodoncista sobre la respiración bucal.</p></div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-            <h2 id="noche">6. Cuida tu respiración de noche</h2>
-            <p>Pasamos un tercio de la vida durmiendo, y muchas personas respiran por la boca durante la noche sin saberlo. Señales de alarma: boca seca al despertar, ronquidos, levantarte cansado/a aunque hayas dormido suficientes horas, dolores de cabeza por la mañana o necesidad de ir al baño varias veces por la noche.</p>
+    <!-- 6 Noche -->
+    <section class="screen alt" id="noche">
+      <div class="container">
+        <div class="chapter-head reveal">
+          <span class="chapter-num">6</span>
+          <h2>Cuida tu respiración de noche</h2>
+          <p class="lead">Pasamos un tercio de la vida durmiendo, y muchas personas respiran por la boca durante la noche sin saberlo.</p>
+        </div>
+        <div class="chapter-body">
+          <div class="prose reveal">
+            <p>Señales de alarma: boca seca al despertar, ronquidos, levantarte cansado/a aunque hayas dormido suficientes horas, dolores de cabeza por la mañana o necesidad de ir al baño varias veces por la noche.</p>
             <p>En el libro, Nestor cuenta que duerme con un pequeño trozo de esparadrapo en los labios para mantener la boca cerrada. Es una práctica que se ha popularizado mucho, pero la investigación todavía es escasa y <strong>no es adecuada para todo el mundo</strong>.</p>
             <div class="callout danger">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5m0 3h.01"/></svg>
               <p><strong>Antes de tapar la boca por la noche</strong>Habla con tu médico, sobre todo si roncas fuerte, alguien ha notado que dejas de respirar mientras duermes, tienes la nariz congestionada, has bebido alcohol o tomado sedantes. La apnea del sueño es frecuente, está infradiagnosticada y tiene tratamientos eficaces. Taparse la boca no la trata.</p>
             </div>
-            <div class="try-it"><b>Pruébalo hoy:</b> ya en la cama, haz 4 ciclos de <a href="ejercicios.html#478">respiración 4-7-8</a> o 5 minutos de respiración coherente con la luz apagada. Duerme de lado si roncas.</div>
+          </div>
+          <aside class="chapter-aside reveal" style="--d:.15s">
+            <div class="try-it"><p>Ya en la cama, haz 4 ciclos de <a href="ejercicios.html#478">respiración 4-7-8</a> o 5 minutos de respiración coherente con la luz apagada. Duerme de lado si roncas.</p></div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-            <h2 id="intensas">Sobre las técnicas intensas</h2>
+    <!-- Intensas -->
+    <section class="screen" id="intensas">
+      <div class="container">
+        <div class="chapter-head reveal">
+          <span class="eyebrow"><span class="dot"></span>Con precaución</span>
+          <h2>Sobre las técnicas intensas</h2>
+          <p class="lead">Para la mayoría de beneficios del día a día no necesitas nada extremo: <strong>lo lento y suave funciona</strong>.</p>
+        </div>
+        <div class="chapter-body">
+          <div class="prose reveal">
             <p>En <em>Respira</em> también aparecen técnicas muy potentes, como el Tummo tibetano o el método Wim Hof, que combinan respiraciones rápidas y profundas con retenciones largas. Un estudio publicado en <em>PNAS</em> en 2014 encontró que personas entrenadas en este tipo de respiración podían modular su respuesta inflamatoria. Es fascinante.</p>
-            <p>Pero hemos decidido <strong>no incluir estas técnicas como ejercicio guiado</strong>, porque provocan cambios fuertes en el cuerpo (hormigueo, mareo, incluso desmayos) y no son adecuadas para todo el mundo. Si te interesan, apréndelas con un instructor cualificado y ten en cuenta estas reglas:</p>
-            <ul>
-              <li>Nunca dentro del agua (ni en la bañera, ni en la piscina) ni conduciendo.</li>
-              <li>No las practiques si estás embarazada, tienes epilepsia, problemas cardiacos, tensión alta no controlada o un trastorno de pánico.</li>
-              <li>Siempre sentado/a o tumbado/a, en un lugar seguro.</li>
-            </ul>
-            <p>La buena noticia es que para la mayoría de beneficios del día a día no necesitas nada de eso: <strong>lo lento y suave funciona</strong>.</p>
-          </article>
-
-          <!-- Herramientas de medida -->
-          <section id="herramientas" class="mt-3">
-            <h2>Mídete (con curiosidad, no con exigencia)</h2>
-            <p class="lead">Dos pequeñas pruebas para conocer tu respiración y ver cómo evoluciona con la práctica.</p>
-            <div class="grid grid-2 mt-2">
-              <div class="tool" data-tool="counter">
-                <h3>¿Cuántas veces respiras por minuto?</h3>
-                <ol class="tool-steps">
-                  <li>Siéntate y respira con normalidad, sin intentar cambiar nada.</li>
-                  <li>Pulsa «Empezar» y toca el círculo cada vez que exhales.</li>
-                </ol>
-                <div class="tool-display js-count-time" aria-live="off">60 s</div>
-                <button type="button" class="tap-btn js-count-tap" disabled aria-label="He exhalado, sumar una respiración"><span class="js-count-num" aria-live="polite">0</span>toca al exhalar</button>
-                <div class="center mt-1"><button type="button" class="btn js-count-start">Empezar</button></div>
-                <div class="tool-result js-count-result" aria-live="polite"></div>
-              </div>
-
-              <div class="tool" data-tool="bolt">
-                <h3>Test de pausa de control (BOLT)</h3>
-                <p class="small muted">Una prueba del método Buteyko que da una idea de tu tolerancia al CO₂. Mejor por la mañana, sentado/a y en calma.</p>
-                <ol class="tool-steps">
-                  <li>Respira normal por la nariz durante un minuto.</li>
-                  <li>Tras una exhalación normal (no forzada), tápate la nariz con los dedos y pulsa el botón.</li>
-                  <li>Púlsalo de nuevo con la <strong>primera</strong> necesidad clara de respirar, aunque sea pequeña. No es una prueba de aguante.</li>
-                </ol>
-                <div class="tool-display js-bolt-time" aria-live="off">0,0 s</div>
-                <div class="center"><button type="button" class="btn js-bolt-btn">He exhalado y tapado la nariz</button></div>
-                <div class="tool-result js-bolt-result" aria-live="polite"></div>
-                <ul class="history js-bolt-history" aria-label="Tus últimos resultados"></ul>
-                <p class="small muted mt-1 mb-0">Tras soltar la nariz, tu primera respiración debería ser tranquila. Si necesitas una bocanada grande, has aguantado demasiado.</p>
-              </div>
+            <p>Pero hemos decidido <strong>no incluir estas técnicas como ejercicio guiado</strong>, porque provocan cambios fuertes en el cuerpo (hormigueo, mareo, incluso desmayos) y no son adecuadas para todo el mundo. Si te interesan, apréndelas con un instructor cualificado.</p>
+          </div>
+          <aside class="chapter-aside reveal" style="--d:.15s">
+            <div class="callout danger">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+              <p><strong>Reglas de seguridad</strong>Nunca dentro del agua ni conduciendo. No las practiques si estás embarazada, tienes epilepsia, problemas cardiacos, tensión alta no controlada o trastorno de pánico. Siempre sentado/a o tumbado/a, en un lugar seguro.</p>
             </div>
-          </section>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-          <!-- Registro -->
-          <section id="registro" class="mt-3">
-            <div class="tool" data-tool="habits">
-              <span class="tag">Se renueva cada día</span>
-              <h2 class="mt-1" style="font-size:1.7rem">Mis hábitos de hoy</h2>
-              <p>Marca lo que has hecho hoy. No busques el día perfecto: lo que transforma es la constancia amable, no la exigencia.</p>
-              <div class="progress-bar" aria-hidden="true"><span class="js-habit-bar" style="width:0"></span></div>
-              <p class="small muted js-habit-label" aria-live="polite"></p>
-              <ul class="habit-list js-habit-list"></ul>
-              <h3 class="mt-2" style="font-size:1.05rem">Tus últimos 7 días</h3>
-              <div class="week js-habit-week" aria-label="Porcentaje de hábitos completados en los últimos siete días"></div>
-            </div>
-          </section>
+    <!-- Herramientas de medida -->
+    <section class="screen alt" id="herramientas">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span class="dot"></span>Mídete</span>
+          <h2>Con curiosidad, no con exigencia</h2>
+          <p class="lead">Dos pequeñas pruebas para conocer tu respiración y ver cómo evoluciona con la práctica.</p>
+        </div>
+        <div class="grid grid-2 stagger">
+          <div class="tool" data-tool="counter">
+            <h3>¿Cuántas veces respiras por minuto?</h3>
+            <ol class="tool-steps">
+              <li>Siéntate y respira con normalidad, sin intentar cambiar nada.</li>
+              <li>Pulsa «Empezar» y toca el círculo cada vez que exhales.</li>
+            </ol>
+            <div class="tool-display js-count-time" aria-live="off">60 s</div>
+            <button type="button" class="tap-btn js-count-tap" disabled aria-label="He exhalado, sumar una respiración"><span class="js-count-num" aria-live="polite">0</span>toca al exhalar</button>
+            <div class="center mt-1"><button type="button" class="btn js-count-start">Empezar</button></div>
+            <div class="tool-result js-count-result" aria-live="polite"></div>
+          </div>
 
-          <section class="mt-3">
-            <div class="cta-band">
-              <div>
-                <h2>De la teoría a la práctica</h2>
-                <p>Nueve ejercicios guiados te esperan. Empieza con uno de 3 minutos.</p>
-              </div>
-              <a class="btn btn-lg" href="ejercicios.html">Ir a los ejercicios</a>
-            </div>
-          </section>
+          <div class="tool" data-tool="bolt">
+            <h3>Test de pausa de control (BOLT)</h3>
+            <p class="small muted">Una prueba del método Buteyko que da una idea de tu tolerancia al CO₂. Mejor por la mañana, sentado/a y en calma.</p>
+            <ol class="tool-steps">
+              <li>Respira normal por la nariz durante un minuto.</li>
+              <li>Tras una exhalación normal (no forzada), tápate la nariz con los dedos y pulsa el botón.</li>
+              <li>Púlsalo de nuevo con la <strong>primera</strong> necesidad clara de respirar, aunque sea pequeña. No es una prueba de aguante.</li>
+            </ol>
+            <div class="tool-display js-bolt-time" aria-live="off">0,0 s</div>
+            <div class="center"><button type="button" class="btn js-bolt-btn">He exhalado y tapado la nariz</button></div>
+            <div class="tool-result js-bolt-result" aria-live="polite"></div>
+            <ul class="history js-bolt-history" aria-label="Tus últimos resultados"></ul>
+            <p class="small muted mt-1 mb-0">Tras soltar la nariz, tu primera respiración debería ser tranquila. Si necesitas una bocanada grande, has aguantado demasiado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registro -->
+    <section class="screen" id="registro">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span class="dot"></span>Se renueva cada día</span>
+          <h2>Mis hábitos de hoy</h2>
+          <p class="lead">Marca lo que has hecho hoy. No busques el día perfecto: lo que transforma es la constancia amable, no la exigencia.</p>
+        </div>
+        <div class="tool reveal" data-tool="habits">
+          <div class="progress-bar" aria-hidden="true"><span class="js-habit-bar" style="width:0"></span></div>
+          <p class="small muted js-habit-label" aria-live="polite"></p>
+          <ul class="habit-list js-habit-list"></ul>
+          <h3 class="mt-3" style="font-size:1.1rem">Tus últimos 7 días</h3>
+          <div class="week js-habit-week" aria-label="Porcentaje de hábitos completados en los últimos siete días"></div>
+        </div>
+        <div class="cta-band c-green mt-3 reveal" style="background:var(--green)">
+          <div>
+            <h2>De la teoría a la práctica</h2>
+            <p>Nueve ejercicios guiados te esperan. Empieza con uno de 3 minutos.</p>
+          </div>
+          <a class="btn btn-lg" href="ejercicios.html">Ir a los ejercicios</a>
         </div>
       </div>
     </section>
@@ -222,9 +354,10 @@
       <div class="footer-grid">
         <div>
           <a class="brand" href="index.html" aria-label="WellBreath, inicio">
-            <img class="brand-mark" src="img/favicon.svg" alt="" width="36" height="36">
-            <span><span class="brand-name">WellBreath</span><span class="brand-tag">Respirar bien, vivir mejor</span></span>
+            <img class="brand-mark" src="img/favicon.svg" alt="" width="44" height="44">
+            <span><span class="brand-name">Well<span>Breath</span></span><span class="brand-tag">Respirar bien, vivir mejor</span></span>
           </a>
+          <div class="footer-colors" aria-hidden="true"><span style="background:var(--blue)"></span><span style="background:var(--green)"></span><span style="background:var(--yellow)"></span><span style="background:var(--violet)"></span></div>
           <p class="mt-1">Un rincón tranquilo para recuperar algo que haces 20.000 veces al día. Hecho con cariño, basado en ciencia y en las ideas del libro <em>Respira</em>, de James Nestor.</p>
         </div>
         <div>

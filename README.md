@@ -23,7 +23,7 @@ Todo el progreso se guarda solo en el navegador (`localStorage`): sin cuentas, s
 
 ## Cómo verla en local
 
-Es un sitio estático, sin dependencias ni compilación:
+Es un sitio estático, sin dependencias ni compilación. Diseño con paleta viva (azul, verde, violeta y amarillo), tipografías Plus Jakarta Sans e Inter, secciones a pantalla completa, modo claro/oscuro y animaciones suaves que respetan «reducir movimiento»:
 
 ```bash
 python3 -m http.server 8000

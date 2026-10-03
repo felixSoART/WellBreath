@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#2c7a6b">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Nunito:ital,wght@0,400..800;1,400..600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script>
     (function () {
@@ -24,8 +24,8 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="WellBreath, inicio">
-        <img class="brand-mark" src="img/favicon.svg" alt="" width="36" height="36">
-        <span><span class="brand-name">WellBreath</span><span class="brand-tag">Respirar bien, vivir mejor</span></span>
+        <img class="brand-mark" src="img/favicon.svg" alt="" width="44" height="44">
+        <span><span class="brand-name">Well<span>Breath</span></span><span class="brand-tag">Respirar bien, vivir mejor</span></span>
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Principal">
         <ul>
@@ -48,34 +48,36 @@
   </header>
 
   <main id="main">
-    <section class="page-hero">
+    <!-- Intro + estado de ánimo -->
+    <section class="screen tint">
+      <div class="blobs" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b4"></span></div>
       <div class="container">
-        <span class="eyebrow">Ejercicios guiados</span>
-        <h1>Respira conmigo</h1>
-        <p class="lead">Elige un ejercicio, pulsa «Empezar» y sigue el círculo: crece cuando inhalas y se encoge cuando exhalas. Puedes activar sonido, voz o vibración en los ajustes. Tu pantalla no se apagará mientras practicas.</p>
-      </div>
-    </section>
-
-    <!-- Según cómo te sientes -->
-    <section class="section-tight" style="padding-top:0">
-      <div class="container">
-        <h2 style="font-size:1.4rem">¿Cómo te sientes ahora?</h2>
-        <div class="mood-grid mt-1">
-          <button type="button" class="mood-btn" data-mood-exercise="suspiro"><span class="mood-emoji" aria-hidden="true">😮‍💨</span><b>Agobiado/a</b><span>Suspiro cíclico</span></button>
-          <button type="button" class="mood-btn" data-mood-exercise="exhalacion"><span class="mood-emoji" aria-hidden="true">😣</span><b>Estresado/a</b><span>Exhalación larga</span></button>
-          <button type="button" class="mood-btn" data-mood-exercise="reset"><span class="mood-emoji" aria-hidden="true">🌀</span><b>Disperso/a</b><span>Reset de 1 minuto</span></button>
-          <button type="button" class="mood-btn" data-mood-exercise="cuadrada"><span class="mood-emoji" aria-hidden="true">🎯</span><b>Necesito centrarme</b><span>Respiración cuadrada</span></button>
-          <button type="button" class="mood-btn" data-mood-exercise="478"><span class="mood-emoji" aria-hidden="true">🌙</span><b>No puedo dormir</b><span>Respiración 4-7-8</span></button>
-          <button type="button" class="mood-btn" data-mood-exercise="coherente"><span class="mood-emoji" aria-hidden="true">🌿</span><b>Bien, quiero cuidarme</b><span>Respiración coherente</span></button>
+        <div class="section-head stagger">
+          <span class="eyebrow"><span class="dot"></span>Ejercicios guiados</span>
+          <h1>Respira conmigo</h1>
+          <p class="lead">Elige un ejercicio, pulsa «Empezar» y sigue el círculo: crece cuando inhalas y se encoge cuando exhalas. Puedes activar sonido, voz o vibración. Tu pantalla no se apagará mientras practicas.</p>
+        </div>
+        <h2 class="center reveal" style="font-size:clamp(1.4rem,2.4vw,1.9rem)">¿Cómo te sientes ahora?</h2>
+        <div class="mood-grid mt-2 stagger">
+          <button type="button" class="mood-btn c-violet" data-mood-exercise="suspiro"><span class="mood-emoji" aria-hidden="true">😮‍💨</span><b>Agobiado/a</b><span>Suspiro cíclico</span></button>
+          <button type="button" class="mood-btn c-red" data-mood-exercise="exhalacion"><span class="mood-emoji" aria-hidden="true">😣</span><b>Estresado/a</b><span>Exhalación larga</span></button>
+          <button type="button" class="mood-btn c-yellow" data-mood-exercise="reset"><span class="mood-emoji" aria-hidden="true">🌀</span><b>Disperso/a</b><span>Reset de 1 minuto</span></button>
+          <button type="button" class="mood-btn c-blue" data-mood-exercise="cuadrada"><span class="mood-emoji" aria-hidden="true">🎯</span><b>Necesito centrarme</b><span>Respiración cuadrada</span></button>
+          <button type="button" class="mood-btn c-violet" data-mood-exercise="478"><span class="mood-emoji" aria-hidden="true">🌙</span><b>No puedo dormir</b><span>Respiración 4-7-8</span></button>
+          <button type="button" class="mood-btn c-green" data-mood-exercise="coherente"><span class="mood-emoji" aria-hidden="true">🌿</span><b>Bien, quiero cuidarme</b><span>Respiración coherente</span></button>
         </div>
       </div>
+      <a class="scroll-cue" href="#biblioteca" aria-label="Ir a todos los ejercicios">
+        Todos los ejercicios
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </a>
     </section>
 
     <!-- Biblioteca + reproductor -->
-    <section class="section-tight">
+    <section class="screen" id="biblioteca">
       <div class="container lib-layout">
         <div>
-          <h2 style="font-size:1.4rem">Todos los ejercicios</h2>
+          <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem)">Todos los ejercicios</h2>
           <div class="chips lib-filters" id="exercise-filters" role="group" aria-label="Filtrar ejercicios por categoría"></div>
           <div class="lib-list" id="exercise-list"></div>
         </div>
@@ -87,34 +89,34 @@
     </section>
 
     <!-- Consejos -->
-    <section class="section section-alt">
+    <section class="screen alt">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Antes de empezar</span>
+          <span class="eyebrow"><span class="dot"></span>Antes de empezar</span>
           <h2>Seis consejos para practicar bien</h2>
         </div>
-        <div class="grid grid-3">
-          <div class="card reveal">
+        <div class="grid grid-3 stagger">
+          <div class="card lift top-bar c-blue">
             <h3>Postura cómoda, no perfecta</h3>
             <p>Sentado/a con la espalda larga, tumbado/a o incluso de pie. Lo importante es que el abdomen pueda moverse libremente. Afloja el cinturón si hace falta.</p>
           </div>
-          <div class="card reveal">
+          <div class="card lift top-bar c-green">
             <h3>Por la nariz, salvo que se indique</h3>
             <p>Salvo en el suspiro cíclico y el 4-7-8, donde se exhala por la boca, respira por la nariz. Si la tienes congestionada, haz lo que puedas sin agobiarte.</p>
           </div>
-          <div class="card reveal">
+          <div class="card lift top-bar c-yellow">
             <h3>Suave gana a profundo</h3>
             <p>No hace falta llenar los pulmones al máximo. Si te mareas o notas hormigueo, estás respirando demasiado volumen: hazlo más suave.</p>
           </div>
-          <div class="card reveal">
+          <div class="card lift top-bar c-violet">
             <h3>Poco y a menudo</h3>
             <p>Cinco minutos al día valen más que una hora el domingo. Asocia la práctica a algo que ya haces: después del café, antes de abrir el correo, al meterte en la cama.</p>
           </div>
-          <div class="card reveal">
+          <div class="card lift top-bar c-red">
             <h3>Practica en calma, úsalo en la tormenta</h3>
             <p>Igual que un simulacro de incendio, la respiración funciona mejor en los momentos difíciles si la has practicado cuando estabas tranquilo/a.</p>
           </div>
-          <div class="card reveal">
+          <div class="card lift top-bar c-blue">
             <h3>Escucha a tu cuerpo</h3>
             <p>Si algo te resulta desagradable, para. Si tienes una enfermedad respiratoria o cardiaca, o estás embarazada, evita las retenciones largas y consulta con tu médico.</p>
           </div>
@@ -123,37 +125,37 @@
     </section>
 
     <!-- Rutinas -->
-    <section class="section">
+    <section class="screen">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">Rutinas sugeridas</span>
+          <span class="eyebrow"><span class="dot"></span>Rutinas sugeridas</span>
           <h2>Un día respirando mejor</h2>
           <p class="lead">Una propuesta flexible. Escoge uno o dos momentos para empezar y ve sumando cuando te apetezca.</p>
         </div>
-        <div class="grid grid-4">
-          <div class="card reveal">
-            <span class="tag">Al despertar</span>
+        <div class="grid grid-4 stagger">
+          <div class="card lift colored c-yellow">
+            <span class="tag focus">☀️ Al despertar</span>
             <h3 class="mt-1">3 min · Abdominal</h3>
             <p>Antes de mirar el móvil. Despierta tu diafragma y empieza el día desde la calma.</p>
-            <a class="btn btn-soft btn-sm" href="#abdominal">Practicar</a>
+            <a class="btn btn-sm btn-ghost mt-1" href="#abdominal">Practicar</a>
           </div>
-          <div class="card reveal">
-            <span class="tag focus">Entre tareas</span>
+          <div class="card lift colored c-blue">
+            <span class="tag">💻 Entre tareas</span>
             <h3 class="mt-1">1 min · Reset</h3>
             <p>Después de una reunión o antes de cambiar de tarea. Corta el piloto automático.</p>
-            <a class="btn btn-soft btn-sm" href="#reset">Practicar</a>
+            <a class="btn btn-sm btn-ghost mt-1" href="#reset">Practicar</a>
           </div>
-          <div class="card reveal">
-            <span class="tag calm">Tras el trabajo</span>
+          <div class="card lift colored c-green">
+            <span class="tag accent">🏡 Tras el trabajo</span>
             <h3 class="mt-1">5 min · Coherente</h3>
             <p>Una transición entre el modo trabajo y el modo casa. Suelta el día.</p>
-            <a class="btn btn-soft btn-sm" href="#coherente">Practicar</a>
+            <a class="btn btn-sm btn-ghost mt-1" href="#coherente">Practicar</a>
           </div>
-          <div class="card reveal">
-            <span class="tag accent">En la cama</span>
+          <div class="card lift colored c-violet">
+            <span class="tag calm">🌙 En la cama</span>
             <h3 class="mt-1">4 ciclos · 4-7-8</h3>
             <p>Con la luz apagada. Deja que la exhalación larga te lleve hacia el sueño.</p>
-            <a class="btn btn-soft btn-sm" href="#478">Practicar</a>
+            <a class="btn btn-sm btn-ghost mt-1" href="#478">Practicar</a>
           </div>
         </div>
       </div>
@@ -165,9 +167,10 @@
       <div class="footer-grid">
         <div>
           <a class="brand" href="index.html" aria-label="WellBreath, inicio">
-            <img class="brand-mark" src="img/favicon.svg" alt="" width="36" height="36">
-            <span><span class="brand-name">WellBreath</span><span class="brand-tag">Respirar bien, vivir mejor</span></span>
+            <img class="brand-mark" src="img/favicon.svg" alt="" width="44" height="44">
+            <span><span class="brand-name">Well<span>Breath</span></span><span class="brand-tag">Respirar bien, vivir mejor</span></span>
           </a>
+          <div class="footer-colors" aria-hidden="true"><span style="background:var(--blue)"></span><span style="background:var(--green)"></span><span style="background:var(--yellow)"></span><span style="background:var(--violet)"></span></div>
           <p class="mt-1">Un rincón tranquilo para recuperar algo que haces 20.000 veces al día. Hecho con cariño, basado en ciencia y en las ideas del libro <em>Respira</em>, de James Nestor.</p>
         </div>
         <div>

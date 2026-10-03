@@ -66,6 +66,7 @@
         <button type="button" class="icon-btn modal-close" aria-label="Cerrar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
         </button>
+        <div class="modal-scroll theme-violet">
         <h2 id="sos-title">Vamos a respirar juntos</h2>
         <p>No tienes que hacerlo perfecto. Sigue el círculo: <strong>dos inhalaciones por la nariz</strong> y <strong>una exhalación larga por la boca</strong>. Lo que sientes es incómodo, pero no es peligroso, y va a pasar.</p>
         <div class="js-sos-player" data-breath-player="sos" data-compact data-minutes="2"></div>
@@ -74,6 +75,7 @@
           <a class="btn btn-ghost btn-sm" href="ansiedad.html">Entender la ansiedad</a>
         </div>
         <p class="small muted center mt-2 mb-0">Si estás en peligro o piensas en hacerte daño, llama al <strong>112</strong> o al <strong>024</strong> (España, 24 h, gratuito). En otros países, a tu número local de emergencias.</p>
+        </div>
       </div>`;
     document.body.appendChild(modal);
     return modal;
@@ -102,7 +104,7 @@
     sosModal.hidden = false;
     document.body.style.overflow = 'hidden';
     const startBtn = $('.js-toggle', sosModal);
-    if (startBtn) startBtn.focus();
+    if (startBtn) startBtn.focus({ preventScroll: true });
   }
 
   function closeSos() {
@@ -117,30 +119,45 @@
   WB.openSos = openSos;
   $$('[data-open-sos]').forEach((b) => b.addEventListener('click', openSos));
 
-  /* ---------- Aparición suave al hacer scroll ---------- */
+  /* ---------- Cabecera: sombra al hacer scroll ---------- */
+  const header = $('.site-header');
+  if (header) {
+    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  /* ---------- Aparición suave al hacer scroll (con escalonado) ---------- */
+  $$('.stagger').forEach((group) => {
+    Array.from(group.children).forEach((child, i) => {
+      child.classList.add('reveal');
+      child.style.setProperty('--d', `${Math.min(i, 8) * 0.08}s`);
+    });
+  });
   const reveals = $$('.reveal');
   if ('IntersectionObserver' in window && reveals.length) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); } });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.08 });
     reveals.forEach((el) => io.observe(el));
   } else {
     reveals.forEach((el) => el.classList.add('is-visible'));
   }
 
-  /* ---------- Índice del artículo: resalta la sección visible ---------- */
-  const tocLinks = $$('.toc a[href^="#"]');
+  /* ---------- Índice de capítulos: resalta la sección visible ---------- */
+  const tocLinks = $$('.chapter-nav a[href^="#"]');
   if (tocLinks.length && 'IntersectionObserver' in window) {
     const map = new Map();
     tocLinks.forEach((a) => { const t = document.getElementById(a.getAttribute('href').slice(1)); if (t) map.set(t, a); });
+    const setActive = (a) => {
+      tocLinks.forEach((x) => x.classList.toggle('is-active', x === a));
+      // mantiene visible el capítulo activo dentro de la barra
+      const bar = a.parentElement && a.closest('ol');
+      if (bar) bar.scrollTo({ left: a.offsetLeft - bar.clientWidth / 2 + a.clientWidth / 2, behavior: 'smooth' });
+    };
     const tio = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) {
-          tocLinks.forEach((a) => a.classList.remove('is-active'));
-          const a = map.get(en.target); if (a) a.classList.add('is-active');
-        }
-      });
-    }, { rootMargin: '-20% 0px -70% 0px' });
+      entries.forEach((en) => { if (en.isIntersecting) { const a = map.get(en.target); if (a) setActive(a); } });
+    }, { rootMargin: '-35% 0px -60% 0px' });
     map.forEach((_, t) => tio.observe(t));
   }
 

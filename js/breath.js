@@ -241,7 +241,7 @@
               <circle class="track" cx="100" cy="100" r="96"/>
               <circle class="progress" cx="100" cy="100" r="96" stroke-dasharray="${RING_C}" stroke-dashoffset="${RING_C}"/>
             </svg>
-            <div class="orb-halo" aria-hidden="true"></div>
+            <div class="orb-ripple" aria-hidden="true"></div>
             <div class="orb" aria-hidden="true"></div>
             <div class="player-center">
               <span class="player-phase">Listo</span>
@@ -282,7 +282,7 @@
         </div>`;
       const q = (s) => this.el.querySelector(s);
       this.ui = {
-        root: q('.player'), title: q('.player-title'), sub: q('.player-sub'), orb: q('.orb'), ring: q('.progress'),
+        root: q('.player'), title: q('.player-title'), sub: q('.player-sub'), orb: q('.orb'), ripple: q('.orb-ripple'), ring: q('.progress'),
         phase: q('.player-phase'), count: q('.player-count'), hint: q('.player-hint'),
         cycle: q('.m-cycle'), cycleLabel: q('.m-cycle-label'), time: q('.m-time'),
         toggle: q('.js-toggle'), stop: q('.js-stop'), fieldset: q('.js-fieldset'),
@@ -512,6 +512,9 @@
         u.cycle.textContent = this.ex.display === 'count'
           ? `${Math.ceil(ph.cycle / 10)}`
           : `${ph.cycle} / ${tl.cycles}`;
+        if (ph.type === 'in' && u.ripple) { // onda suave al empezar a inhalar
+          u.ripple.classList.remove('go'); void u.ripple.offsetWidth; u.ripple.classList.add('go');
+        }
         audio.cue(this.prefs.sound, ph.type, ph.secs);
         if (this.prefs.voice) speak(info.voice);
         if (this.prefs.vibrate && navigator.vibrate) navigator.vibrate(ph.type === 'in' || ph.type === 'out' ? 35 : 15);

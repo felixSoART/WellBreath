@@ -22,7 +22,10 @@
     const details = $('#exercise-details');
     const filters = $('#exercise-filters');
     const EX = window.WB_EXERCISES;
-    const ids = Object.keys(EX).filter((id) => EX[id].library);
+    // Orden pensado: de lo básico a lo específico (las claves numéricas como '478' se ordenarían primero)
+    const ORDER = ['coherente', 'suspiro', 'exhalacion', 'abdominal', 'cuadrada', '478', 'ligera', 'reset', 'contador'];
+    const ids = ORDER.filter((id) => EX[id] && EX[id].library)
+      .concat(Object.keys(EX).filter((id) => EX[id].library && !ORDER.includes(id)));
     let current = null;
     let filter = 'todos';
 
@@ -63,7 +66,7 @@
     function renderDetails(ex) {
       if (!details) return;
       details.innerHTML = `
-        <h2 class="mt-0" style="font-size:1.6rem">${esc(ex.name)}</h2>
+        <h2 class="mt-0">${esc(ex.name)}</h2>
         <p>${esc(ex.intro)}</p>
         <h3>Cómo hacerlo</h3>
         <ol>${ex.how.map((s) => `<li>${esc(s)}</li>`).join('')}</ol>
@@ -220,6 +223,7 @@
     const form = $('form', root);
     const out = $('.js-quiz-result', root);
     const qs = $('.js-quiz-questions', root);
+    qs.classList.add('quiz-grid');
     qs.innerHTML = QUIZ.map((item, i) => `
       <div class="quiz-q">
         <fieldset>
@@ -300,7 +304,7 @@
       const focusVal = e.target.value;
       render();
       const again = listEl.querySelector(`input[value="${focusVal}"]`);
-      if (again) again.focus();
+      if (again) again.focus({ preventScroll: true });
     });
     render();
   }
@@ -434,6 +438,19 @@
   /* ======================================================================
      Estadísticas y ejercicio del día
      ====================================================================== */
+  // Anima los números de 0 a su valor final
+  function countUp(el, target) {
+    const from = Number(el.textContent) || 0;
+    if (from === target || matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = target; return; }
+    const t0 = performance.now(), dur = 900;
+    const step = (now) => {
+      const p = Math.min(1, (now - t0) / dur);
+      el.textContent = Math.round(from + (target - from) * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
   function renderStats() {
     const stats = store.get(WB.STATS_KEY, { days: {}, sessions: 0 });
     const days = stats.days || {};
@@ -445,7 +462,7 @@
     if (!days[today]) d.setDate(d.getDate() - 1); // la racha sigue viva si hoy aún no has practicado
     while (days[WB.todayKey(d)]) { streak++; d.setDate(d.getDate() - 1); }
     const values = { today: Math.round((days[today] || 0) / 60), week: Math.round(week / 60), streak, sessions: stats.sessions || 0 };
-    $$('[data-stat]').forEach((el) => { el.textContent = values[el.dataset.stat]; });
+    $$('[data-stat]').forEach((el) => countUp(el, values[el.dataset.stat]));
     $$('[data-stat-message]').forEach((el) => {
       if (!values.sessions) el.textContent = 'Todavía no has hecho ninguna sesión. ¿Empezamos con una de un minuto?';
       else if (values.today) el.textContent = 'Hoy ya has dedicado un rato a respirar. Eso es cuidarse.';
@@ -469,11 +486,11 @@
     const [id, text] = plan[new Date().getDay()];
     const ex = window.WB_EXERCISES[id];
     el.innerHTML = `
-      <span class="tag accent">Ejercicio del día</span>
-      <h3 class="mt-1">${esc(ex.name)}</h3>
+      <span class="tag">Ejercicio del día</span>
+      <h3 class="mt-1" style="font-size:1.6rem">${esc(ex.name)}</h3>
       <p>${esc(text)}</p>
       <p class="muted small">${esc(ex.short)}</p>
-      <a class="btn btn-soft btn-sm" href="ejercicios.html#${id}">Practicarlo ahora</a>`;
+      <a class="btn" href="ejercicios.html#${id}">Practicarlo ahora</a>`;
   }
 
   function init() {

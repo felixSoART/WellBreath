@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#2c7a6b">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Nunito:ital,wght@0,400..800;1,400..600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script>
     (function () {
@@ -19,13 +19,13 @@
   <title>TDAH y respiración · WellBreath</title>
   <meta name="description" content="Respiración para mentes rápidas: qué sabemos de la relación entre TDAH y respiración en adultos, la apnea de pantalla, el sueño y ejercicios cortos y visuales pensados para personas con TDAH.">
 </head>
-<body class="theme-focus">
+<body class="theme-yellow has-chapters">
   <a class="skip-link" href="#main">Saltar al contenido</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="WellBreath, inicio">
-        <img class="brand-mark" src="img/favicon.svg" alt="" width="36" height="36">
-        <span><span class="brand-name">WellBreath</span><span class="brand-tag">Respirar bien, vivir mejor</span></span>
+        <img class="brand-mark" src="img/favicon.svg" alt="" width="44" height="44">
+        <span><span class="brand-name">Well<span>Breath</span></span><span class="brand-tag">Respirar bien, vivir mejor</span></span>
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Principal">
         <ul>
@@ -47,173 +47,260 @@
     </div>
   </header>
 
+  <nav class="chapter-nav" aria-label="Capítulos de la página">
+    <ol>
+      <li><a href="#entender">TDAH adulto</a></li>
+      <li><a href="#honesto">Lo que sabemos</a></li>
+      <li><a href="#emociones">Emociones</a></li>
+      <li><a href="#atencion">Atención</a></li>
+      <li><a href="#apnea">Apnea de pantalla</a></li>
+      <li><a href="#sueno">Sueño</a></li>
+      <li><a href="#meditar">Si meditar cuesta</a></li>
+      <li><a href="#reset">Ejercicios</a></li>
+      <li><a href="#recordatorios">Recordatorios</a></li>
+      <li><a href="#ideas">Ideas</a></li>
+    </ol>
+  </nav>
+
   <main id="main">
-    <section class="page-hero">
-      <div class="container">
-        <span class="eyebrow">TDAH</span>
-        <h1>Una mente rápida también necesita pausas</h1>
-        <p class="lead">Si tienes TDAH (o sospechas que podrías tenerlo), probablemente te hayan dicho mil veces que «medites» o que «te relajes». Y probablemente hayas sentido que eso no está hecho para ti. Esta sección sí lo está: respiración en dosis cortas, visuales y con propósito, sin culpa y sin postureo zen.</p>
-        <div class="btn-row mt-2">
-          <a class="btn btn-focus btn-lg" href="#reset">Hacer un reset de 1 minuto</a>
-          <a class="btn btn-ghost btn-lg" href="#entender">Leer primero</a>
+    <section class="screen tint page-hero">
+      <div class="container hero-grid">
+        <div class="stagger">
+          <span class="eyebrow"><span class="dot"></span>TDAH</span>
+          <h1>Una mente rápida también necesita pausas</h1>
+          <p class="lead">Si tienes TDAH (o sospechas que podrías tenerlo), probablemente te hayan dicho mil veces que «medites» o que «te relajes». Y probablemente hayas sentido que eso no está hecho para ti. Esta sección sí lo está: respiración en dosis cortas, visuales y con propósito, sin culpa y sin postureo zen.</p>
+          <div class="btn-row mt-2">
+            <a class="btn btn-lg" href="#reset">Hacer un reset de 1 minuto</a>
+            <a class="btn btn-ghost btn-lg" href="#entender">Leer primero</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal" aria-hidden="true">
+          <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span>
+          <span class="core"><span>Pausa</span></span>
         </div>
       </div>
     </section>
 
-    <section class="section-tight">
-      <div class="container article-layout">
-        <aside class="toc" aria-label="Índice">
-          <h2>En esta página</h2>
-          <ol>
-            <li><a href="#entender">TDAH en adultos</a></li>
-            <li><a href="#honesto">Lo que sabemos (y lo que no)</a></li>
-            <li><a href="#emociones">Emociones de 0 a 100</a></li>
-            <li><a href="#atencion">Respiración y atención</a></li>
-            <li><a href="#apnea">La apnea de pantalla</a></li>
-            <li><a href="#sueno">Sueño y respiración</a></li>
-            <li><a href="#meditar">Si meditar te cuesta</a></li>
-            <li><a href="#reset">Reset de 1 minuto</a></li>
-            <li><a href="#recordatorios">Recordatorios</a></li>
-            <li><a href="#ideas">Ideas para tu día</a></li>
-          </ol>
-        </aside>
+    <!-- TDAH adulto -->
+    <section class="screen" id="entender">
+      <div class="container">
+        <div class="chapter-head reveal">
+          <span class="eyebrow"><span class="dot"></span>No es cosa de niños</span>
+          <h2>El TDAH no se queda en la infancia</h2>
+          <p class="lead">En muchas personas continúa en la edad adulta, aunque cambie de forma.</p>
+        </div>
+        <div class="chapter-body">
+          <div class="prose reveal">
+            <p>Durante mucho tiempo se pensó que el trastorno por déficit de atención e hiperactividad era «cosa de niños inquietos». Hoy sabemos que la hiperactividad visible suele convertirse en <strong>inquietud interna</strong>: una mente que no para, dificultad para organizarse, procrastinación, despistes, impulsividad y emociones muy intensas.</p>
+            <p>Cada vez más personas reciben el diagnóstico a los 30, 40 o 50 años, especialmente mujeres, cuyos síntomas pasaron desapercibidos durante décadas. Muchas cuentan lo mismo: un enorme alivio al entender por fin por qué todo les costaba tanto, después de años creyendo que eran vagas, desastres o que «no se esforzaban lo suficiente».</p>
+          </div>
+          <aside class="chapter-aside reveal" style="--d:.15s">
+            <div class="fact"><b>~2,5 %</b><span>de los adultos tiene TDAH, según un metaanálisis de 2009</span></div>
+            <div class="prose"><blockquote class="mt-0 mb-0">No es falta de voluntad. Es un cerebro que funciona de forma diferente. Y los cerebros diferentes necesitan herramientas diferentes.</blockquote></div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-        <div>
-          <article class="prose">
-            <h2 id="entender" class="mt-0">El TDAH no se queda en la infancia</h2>
-            <p>Durante mucho tiempo se pensó que el trastorno por déficit de atención e hiperactividad era «cosa de niños inquietos». Hoy sabemos que en muchas personas continúa en la edad adulta, aunque cambie de forma: la hiperactividad visible suele convertirse en <strong>inquietud interna</strong>, una mente que no para, dificultad para organizarse, procrastinación, despistes, impulsividad y emociones muy intensas.</p>
-            <p>Los estudios estiman que alrededor de un 2,5 % de los adultos tiene TDAH, y cada vez más personas reciben el diagnóstico a los 30, 40 o 50 años, especialmente mujeres, cuyos síntomas pasaron desapercibidos durante décadas. Muchas cuentan lo mismo: un enorme alivio al entender por fin por qué todo les costaba tanto, después de años creyendo que eran vagas, desastres o que «no se esforzaban lo suficiente».</p>
-            <blockquote>No es falta de voluntad. Es un cerebro que funciona de forma diferente. Y los cerebros diferentes necesitan herramientas diferentes.</blockquote>
+    <!-- Honesto -->
+    <section class="screen alt" id="honesto">
+      <div class="container">
+        <div class="chapter-head reveal">
+          <span class="eyebrow"><span class="dot"></span>Con total honestidad</span>
+          <h2>Lo que sabemos (y lo que no)</h2>
+          <p class="lead">En internet hay mucha promesa vacía, así que vamos a ser claros: <strong>la respiración no cura el TDAH ni sustituye al tratamiento</strong>.</p>
+        </div>
+        <p class="center max-720 reveal">Las intervenciones con más evidencia siguen siendo la psicoeducación, la medicación cuando está indicada, la terapia cognitivo-conductual adaptada a adultos y las estrategias de organización. Dicho esto, la respiración puede ser una <strong>aliada muy útil</strong> en aspectos que suelen acompañar al TDAH:</p>
+        <div class="grid mt-2 stagger" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+          <div class="card lift top-bar c-red"><h3>Regulación emocional</h3><p>La sensación de pasar de 0 a 100 en segundos.</p></div>
+          <div class="card lift top-bar c-violet"><h3>Ansiedad</h3><p>Muchas personas con TDAH conviven también con ansiedad.</p></div>
+          <div class="card lift top-bar c-blue"><h3>Transiciones</h3><p>Dejar una tarea y empezar otra puede ser durísimo.</p></div>
+          <div class="card lift top-bar c-yellow"><h3>Inquietud interna</h3><p>Y la dificultad para «bajar» al final del día.</p></div>
+          <div class="card lift top-bar c-green"><h3>Sueño</h3><p>Que en el TDAH suele estar alterado.</p></div>
+        </div>
+        <p class="center max-720 mt-3 reveal muted">Los estudios sobre prácticas basadas en la atención a la respiración en adultos con TDAH, como los de Lidia Zylowska (2008) o John Mitchell (2017), todavía son pequeños, pero prometedores: mejoras en atención, funciones ejecutivas y, sobre todo, regulación emocional.</p>
+      </div>
+    </section>
 
-            <h2 id="honesto">Lo que sabemos (y lo que no), con total honestidad</h2>
-            <p>Queremos ser muy claros contigo, porque en internet hay mucha promesa vacía: <strong>la respiración no cura el TDAH ni sustituye al tratamiento</strong>. Las intervenciones con más evidencia siguen siendo la psicoeducación, la medicación cuando está indicada, la terapia cognitivo-conductual adaptada a adultos y las estrategias de organización.</p>
-            <p>Dicho esto, la respiración puede ser una <strong>aliada muy útil</strong> en aspectos que suelen acompañar al TDAH y que a veces pesan tanto como la falta de atención:</p>
-            <ul>
-              <li><strong>La regulación emocional</strong>: la sensación de pasar de 0 a 100 en segundos.</li>
-              <li><strong>La ansiedad</strong>: muchas personas adultas con TDAH conviven también con ansiedad.</li>
-              <li><strong>Las transiciones</strong>: el momento de dejar una tarea y empezar otra, que puede ser durísimo.</li>
-              <li><strong>La inquietud interna</strong> y la dificultad para «bajar» al final del día.</li>
-              <li><strong>El sueño</strong>, que en el TDAH suele estar alterado.</li>
-            </ul>
-            <p>Los estudios sobre prácticas basadas en la atención a la respiración (mindfulness) en adultos con TDAH, como los de Lidia Zylowska en 2008 o John Mitchell en 2017, son todavía pequeños, pero sus resultados son prometedores: mejoras en síntomas de atención, en funciones ejecutivas y, sobre todo, en regulación emocional.</p>
-
-            <h2 id="emociones">Cuando las emociones van de 0 a 100</h2>
+    <!-- Emociones -->
+    <section class="screen" id="emociones">
+      <div class="container">
+        <div class="chapter-head reveal">
+          <span class="eyebrow"><span class="dot"></span>De 0 a 100</span>
+          <h2>Cuando las emociones van demasiado rápido</h2>
+          <p class="lead">El cuerpo va más rápido que la mente. Y ahí es donde la respiración brilla.</p>
+        </div>
+        <div class="chapter-body">
+          <div class="prose reveal">
             <p>La desregulación emocional es una de las partes menos conocidas y más agotadoras del TDAH adulto. Una crítica pequeña puede sentirse como un golpe enorme; una frustración puede convertirse en enfado en segundos. Mucha gente describe esa hipersensibilidad a la crítica con el término popular de «disforia sensible al rechazo» (no es un diagnóstico oficial, pero a muchas personas les ayuda a ponerle nombre).</p>
-            <p>En esos momentos, el problema no es saber qué hacer, sino que el cuerpo va más rápido que la mente. Y ahí es donde la respiración brilla: es <strong>lo único que puedes hacer en 10 segundos sin pensar demasiado</strong>. Un suspiro cíclico (dos inhalaciones por la nariz, una exhalación larga por la boca) actúa directamente sobre el sistema nervioso y te da ese pequeño espacio entre lo que sientes y lo que haces.</p>
-            <div class="try-it"><b>Pruébalo:</b> la próxima vez que notes el calor subir (en el pecho, la cara, las manos), antes de responder ese mensaje, haz dos suspiros cíclicos. Solo dos. Luego decides.</div>
+            <p>En esos momentos, el problema no es saber qué hacer. La respiración es <strong>lo único que puedes hacer en 10 segundos sin pensar demasiado</strong>. Un suspiro cíclico (dos inhalaciones por la nariz, una exhalación larga por la boca) actúa directamente sobre el sistema nervioso y te da ese pequeño espacio entre lo que sientes y lo que haces.</p>
+          </div>
+          <aside class="chapter-aside reveal" style="--d:.15s">
+            <div class="try-it free"><p>La próxima vez que notes el calor subir (en el pecho, la cara, las manos), antes de responder ese mensaje, haz dos suspiros cíclicos. Solo dos. Luego decides.</p></div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-            <h2 id="atencion">Respiración y atención: una conexión fascinante</h2>
-            <p>Hay investigaciones muy interesantes que conectan la respiración con la atención, aunque todavía no se han estudiado específicamente en personas con TDAH:</p>
-            <ul>
-              <li>Un estudio del Trinity College de Dublín (Melnychuk y colaboradores, 2018) encontró que la respiración y la atención están sincronizadas a través del <strong>locus coeruleus</strong>, una pequeña región del tronco cerebral que libera noradrenalina. La noradrenalina es uno de los mensajeros químicos más implicados en el TDAH, y sobre ella actúan varios de sus tratamientos. Los autores sugieren que controlar la respiración podría ser una forma de influir en ese sistema.</li>
-              <li>Un estudio de la Universidad Northwestern (Zelano y colaboradores, 2016) mostró que, al <strong>inhalar por la nariz</strong>, la actividad de zonas cerebrales relacionadas con la memoria y las emociones se sincroniza con la respiración, y las personas recordaban mejor y reconocían antes las caras de miedo. Ese efecto prácticamente desaparecía al respirar por la boca.</li>
-            </ul>
-            <p>Es ciencia en desarrollo, y no queremos venderte más de lo que hay. Pero sí apunta a algo que muchas personas con TDAH notan en primera persona: <strong>cuando respiran más despacio y por la nariz, se sienten más centradas</strong>.</p>
+    <!-- Atención -->
+    <section class="screen alt" id="atencion">
+      <div class="container">
+        <div class="chapter-head reveal">
+          <span class="eyebrow"><span class="dot"></span>Ciencia en desarrollo</span>
+          <h2>Respiración y atención: una conexión fascinante</h2>
+          <p class="lead">Investigaciones muy interesantes, aunque todavía no se han estudiado específicamente en personas con TDAH.</p>
+        </div>
+        <div class="grid grid-2 stagger" style="max-width:1100px;margin:0 auto">
+          <div class="card top-bar c-blue">
+            <span class="tag">Trinity College Dublín · 2018</span>
+            <h3 class="mt-1">El locus coeruleus</h3>
+            <p>Melnychuk y colaboradores encontraron que la respiración y la atención están sincronizadas a través de esta pequeña región del tronco cerebral, que libera noradrenalina. La noradrenalina es uno de los mensajeros más implicados en el TDAH, y sobre ella actúan varios de sus tratamientos. Los autores sugieren que controlar la respiración podría influir en ese sistema.</p>
+          </div>
+          <div class="card top-bar c-green">
+            <span class="tag accent">Northwestern · 2016</span>
+            <h3 class="mt-1">Inhalar por la nariz</h3>
+            <p>Zelano y colaboradores mostraron que, al inhalar por la nariz, zonas cerebrales de memoria y emoción se sincronizan con la respiración: las personas recordaban mejor y reconocían antes las caras de miedo. El efecto casi desaparecía al respirar por la boca.</p>
+          </div>
+        </div>
+        <p class="lead center max-720 mt-3 reveal">No queremos venderte más de lo que hay. Pero apunta a algo que muchas personas con TDAH notan: <strong>cuando respiran más despacio y por la nariz, se sienten más centradas</strong>.</p>
+      </div>
+    </section>
 
-            <h2 id="apnea">La «apnea de pantalla»: cuando el hiperfoco te deja sin aire</h2>
-            <p>La investigadora Linda Stone, que trabajó en empresas como Apple y Microsoft, se dio cuenta de algo curioso: cuando revisaba su correo, contenía la respiración. Preguntó a otras personas y descubrió que a la mayoría le pasaba lo mismo. Lo llamó <strong>«apnea del correo electrónico»</strong>, y hoy se habla de «apnea de pantalla».</p>
-            <p>Si tienes TDAH, esto te va a sonar mucho, sobre todo en los momentos de <strong>hiperfoco</strong>: esas horas en las que te sumerges en algo que te apasiona y desaparece el mundo. Te olvidas de comer, de beber agua, de ir al baño… y de respirar bien. Respiras corto, alto, o incluso aguantas el aire sin darte cuenta. Cuando sales de ahí, estás agotado/a, tenso/a o irritable, y no sabes muy bien por qué.</p>
-            <p>La solución no es pelearte con el hiperfoco (que también tiene su lado maravilloso), sino <strong>poner señales externas</strong> que te recuerden respirar, porque tu cerebro no lo va a hacer solo. Más abajo tienes una herramienta para eso.</p>
+    <!-- Apnea de pantalla -->
+    <section class="screen" id="apnea">
+      <div class="container">
+        <div class="chapter-head reveal">
+          <span class="eyebrow"><span class="dot"></span>Hiperfoco</span>
+          <h2>La «apnea de pantalla»</h2>
+          <p class="lead">Cuando te sumerges en algo, desaparece el mundo… y también tu buena respiración.</p>
+        </div>
+        <div class="chapter-body">
+          <div class="prose reveal">
+            <p>La investigadora Linda Stone, que trabajó en empresas como Apple y Microsoft, se dio cuenta de que contenía la respiración al revisar su correo. Preguntó a otras personas y descubrió que a la mayoría le pasaba lo mismo. Lo llamó <strong>«apnea del correo electrónico»</strong>, y hoy se habla de «apnea de pantalla».</p>
+            <p>Si tienes TDAH, esto te sonará, sobre todo en los momentos de <strong>hiperfoco</strong>: horas en las que te olvidas de comer, de beber agua… y de respirar bien. Respiras corto, alto, o incluso aguantas el aire sin darte cuenta. Al salir, estás agotado/a, tenso/a o irritable, y no sabes muy bien por qué.</p>
+            <p>La solución no es pelearte con el hiperfoco (que también tiene su lado maravilloso), sino <strong>poner señales externas</strong> que te recuerden respirar, porque tu cerebro no lo va a hacer solo.</p>
+          </div>
+          <aside class="chapter-aside reveal" style="--d:.15s">
+            <div class="callout focus">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+              <p><strong>Tienes una herramienta</strong>Más abajo puedes activar recordatorios suaves para respirar mientras trabajas.</p>
+            </div>
+            <a class="btn" href="#recordatorios">Ir a los recordatorios</a>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-            <h2 id="sueno">Sueño, respiración y TDAH: una conexión que a veces se pasa por alto</h2>
-            <p>Los problemas de sueño son muy frecuentes en personas con TDAH: cuesta dormirse, la mente no se apaga, el ritmo circadiano tiende a ir retrasado. Y aquí la respiración tiene un papel doble.</p>
-            <p>Por un lado, <strong>los trastornos respiratorios del sueño pueden imitar o empeorar los síntomas del TDAH</strong>. Un estudio clásico de Ronald Chervin (2006) siguió a niños con problemas respiratorios durante el sueño, como ronquidos o apnea, a los que se les operaron las amígdalas y vegetaciones: muchos de los que cumplían criterios de TDAH antes de la operación dejaron de cumplirlos un año después. En adultos, la apnea del sueño produce falta de concentración, olvidos e irritabilidad, que se pueden confundir con el TDAH o sumarse a él.</p>
+    <!-- Sueño -->
+    <section class="screen alt" id="sueno">
+      <div class="container">
+        <div class="chapter-head reveal">
+          <span class="eyebrow"><span class="dot"></span>Se pasa por alto</span>
+          <h2>Sueño, respiración y TDAH</h2>
+          <p class="lead">Cuesta dormirse, la mente no se apaga, el ritmo circadiano va retrasado. Y aquí la respiración tiene un papel doble.</p>
+        </div>
+        <div class="chapter-body">
+          <div class="prose reveal">
+            <p>Por un lado, <strong>los trastornos respiratorios del sueño pueden imitar o empeorar los síntomas del TDAH</strong>. Un estudio clásico de Ronald Chervin (2006) siguió a niños con ronquidos o apnea a los que se les operaron las amígdalas y vegetaciones: muchos de los que cumplían criterios de TDAH antes de la operación dejaron de cumplirlos un año después. En adultos, la apnea del sueño produce falta de concentración, olvidos e irritabilidad, que se pueden confundir con el TDAH o sumarse a él.</p>
             <p>Por otro lado, una respiración lenta antes de dormir puede ayudar a esa mente que no para a ir bajando revoluciones.</p>
+          </div>
+          <aside class="chapter-aside reveal" style="--d:.15s">
             <div class="callout focus">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-              <p><strong>Habla con tu médico si…</strong>…roncas fuerte, alguien te ha visto dejar de respirar mientras duermes, te despiertas con la boca seca o dolor de cabeza, o te levantas cansado/a aunque hayas dormido suficientes horas. Tratar un problema respiratorio del sueño puede mejorar mucho tu concentración y tu ánimo.</p>
+              <p><strong>Habla con tu médico si…</strong>…roncas fuerte, alguien te ha visto dejar de respirar mientras duermes, te despiertas con la boca seca o dolor de cabeza, o te levantas cansado/a aunque hayas dormido suficiente. Tratar un problema respiratorio del sueño puede mejorar mucho tu concentración y tu ánimo.</p>
             </div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-            <h2 id="meditar">Si meditar te parece una tortura, no estás haciendo nada mal</h2>
-            <p>Sentarte veinte minutos en silencio, con los ojos cerrados, intentando «dejar la mente en blanco»… Para un cerebro con TDAH eso puede ser casi imposible, y lo peor es la sensación de fracaso que deja. Así que vamos a cambiar las reglas:</p>
-            <ul>
-              <li><strong>Corto gana a largo.</strong> Un minuto bien hecho vale más que veinte minutos de lucha. Empieza con 60 segundos.</li>
-              <li><strong>Algo que mirar.</strong> Un círculo que crece y se encoge, un número que avanza: dale a tu atención un objetivo visual.</li>
-              <li><strong>Algo que hacer.</strong> Contar, tocar, caminar. No hace falta estar quieto/a. Puedes respirar mientras caminas o con algo en las manos.</li>
-              <li><strong>Distraerte es parte del ejercicio.</strong> Cada vez que te das cuenta de que te has ido y vuelves, estás entrenando tu atención. No es un fallo: es una repetición, como en el gimnasio.</li>
-              <li><strong>Variedad.</strong> Si te aburres de un ejercicio, cambia. La novedad es tu amiga.</li>
-              <li><strong>Engánchalo a algo que ya haces.</strong> Tu memoria de trabajo no tiene que cargar con un hábito nuevo si lo pegas a uno antiguo: el café, el semáforo, el microondas.</li>
-            </ul>
-          </article>
+    <!-- Meditar -->
+    <section class="screen" id="meditar">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span class="dot"></span>Nuevas reglas</span>
+          <h2>Si meditar te parece una tortura, no estás haciendo nada mal</h2>
+          <p class="lead">Veinte minutos en silencio intentando «dejar la mente en blanco» puede ser casi imposible para un cerebro con TDAH. Así que cambiamos las reglas.</p>
+        </div>
+        <div class="grid grid-3 stagger">
+          <div class="card lift colored c-yellow"><h3>⏱️ Corto gana a largo</h3><p>Un minuto bien hecho vale más que veinte de lucha. Empieza con 60 segundos.</p></div>
+          <div class="card lift colored c-blue"><h3>👀 Algo que mirar</h3><p>Un círculo que crece y se encoge, un número que avanza: dale a tu atención un objetivo visual.</p></div>
+          <div class="card lift colored c-green"><h3>🤲 Algo que hacer</h3><p>Contar, tocar, caminar. No hace falta estar quieto/a.</p></div>
+          <div class="card lift colored c-violet"><h3>🔁 Distraerte es parte</h3><p>Cada vez que te das cuenta y vuelves, entrenas tu atención. No es un fallo: es una repetición, como en el gimnasio.</p></div>
+          <div class="card lift colored c-red"><h3>✨ Variedad</h3><p>Si te aburres de un ejercicio, cambia. La novedad es tu amiga.</p></div>
+          <div class="card lift colored c-blue"><h3>📎 Engánchalo</h3><p>Pega el hábito a uno que ya tienes: el café, el semáforo, el microondas. Tu memoria de trabajo lo agradecerá.</p></div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Herramientas TDAH -->
-          <section id="reset" class="mt-3">
-            <h2>Respiración hecha a tu medida</h2>
-            <p class="lead">Dos ejercicios diseñados pensando en mentes con TDAH: cortos, visuales y con una tarea clara.</p>
-            <div class="grid grid-2 mt-2">
-              <div>
-                <div data-breath-player="reset" data-compact data-show-title></div>
-              </div>
-              <div>
-                <div data-breath-player="contador" data-compact data-minutes="2" data-show-title></div>
-              </div>
-            </div>
-          </section>
+    <!-- Ejercicios -->
+    <section class="screen alt" id="reset">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span class="dot"></span>Hecho a tu medida</span>
+          <h2>Respiración para mentes rápidas</h2>
+          <p class="lead">Dos ejercicios cortos, visuales y con una tarea clara.</p>
+        </div>
+        <div class="grid grid-2 stagger" style="max-width:1100px;margin:0 auto">
+          <div data-breath-player="reset" data-compact data-show-title></div>
+          <div data-breath-player="contador" data-compact data-minutes="2" data-show-title></div>
+        </div>
+      </div>
+    </section>
 
-          <section id="recordatorios" class="mt-3">
-            <div class="tool" data-tool="reminder">
-              <span class="tag focus">Antiapnea de pantalla</span>
-              <h2 class="mt-1" style="font-size:1.7rem">Recordatorios para respirar</h2>
-              <p>Tu cerebro no va a acordarse solo, y no pasa nada: para eso están las ayudas externas. Activa un recordatorio suave cada cierto tiempo mientras trabajas o estudias. Sonará una campanita y aparecerá un mensaje breve con una micro-pausa.</p>
-              <div class="btn-row" style="align-items:center">
-                <label class="visually-hidden" for="rem-interval">Frecuencia del recordatorio</label>
-                <select id="rem-interval" class="js-rem-interval">
-                  <option value="15">Cada 15 minutos</option>
-                  <option value="25" selected>Cada 25 minutos (pomodoro)</option>
-                  <option value="45">Cada 45 minutos</option>
-                  <option value="60">Cada hora</option>
-                </select>
-                <button type="button" class="btn btn-focus js-rem-toggle">Activar recordatorios</button>
-                <button type="button" class="btn btn-ghost btn-sm js-rem-test">Probar ahora</button>
-              </div>
-              <p class="small muted mt-1 js-rem-status" aria-live="polite"></p>
-              <p class="small muted mb-0">Funciona mientras esta pestaña esté abierta. Si das permiso, también verás una notificación cuando estés en otra ventana. Combínalo con la técnica pomodoro: al sonar, levántate, respira tres veces y bebe agua.</p>
-            </div>
-          </section>
-
-          <article class="prose mt-3">
-            <h2 id="ideas">Ideas para meter la respiración en tu día (sin que sea otra obligación)</h2>
-          </article>
-          <div class="grid grid-2 mt-2">
-            <div class="card">
-              <h3>🚦 Respira en las esperas</h3>
-              <p>Semáforo en rojo, microondas, ascensor, la cola del súper, el ordenador que no arranca: son momentos muertos perfectos para tres respiraciones lentas. Ya estás esperando de todas formas.</p>
-            </div>
-            <div class="card">
-              <h3>🔁 El ritual entre tareas</h3>
-              <p>Antes de cambiar de tarea: <strong>cierra</strong> (guarda, cierra pestañas), <strong>respira</strong> (tres exhalaciones largas) y <strong>nombra</strong> en voz alta lo siguiente: «Ahora voy a…». Es un truco sencillo para las transiciones.</p>
-            </div>
-            <div class="card">
-              <h3>🚶 Respira caminando</h3>
-              <p>Si estar quieto/a te cuesta, camina. Inhala por la nariz durante 4 pasos y exhala durante 6. Cuenta los pasos: le das a tu mente una tarea y a tu cuerpo, movimiento.</p>
-            </div>
-            <div class="card">
-              <h3>📱 Notificación = exhalación</h3>
-              <p>Convierte cada vibración del móvil en una señal: antes de mirar la pantalla, una exhalación larga. Además de respirar mejor, ganas un segundo para decidir si de verdad quieres mirarlo.</p>
-            </div>
-            <div class="card">
-              <h3>🧸 Respira con las manos ocupadas</h3>
-              <p>Un fidget, una pelota antiestrés o una piedra lisa en la mano. Aprieta suave al inhalar y suelta al exhalar. El movimiento ayuda a muchas mentes inquietas a concentrarse en la respiración.</p>
-            </div>
-            <div class="card">
-              <h3>🌙 Bajar revoluciones por la noche</h3>
-              <p>Si tu mente se enciende justo al apagar la luz, prueba la respiración 4-7-8 o cuenta respiraciones del 1 al 10 en la cama. Si te pierdes (te perderás), vuelve al 1 con una sonrisa.</p>
-            </div>
+    <!-- Recordatorios -->
+    <section class="screen" id="recordatorios">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span class="dot"></span>Antiapnea de pantalla</span>
+          <h2>Recordatorios para respirar</h2>
+          <p class="lead">Tu cerebro no va a acordarse solo, y no pasa nada: para eso están las ayudas externas.</p>
+        </div>
+        <div class="tool reveal center" style="max-width:860px;margin:0 auto" data-tool="reminder">
+          <p>Activa un recordatorio suave mientras trabajas o estudias. Sonará una campanita y aparecerá un mensaje breve con una micro-pausa.</p>
+          <div class="btn-row center mt-2" style="align-items:center">
+            <label class="visually-hidden" for="rem-interval">Frecuencia del recordatorio</label>
+            <select id="rem-interval" class="js-rem-interval">
+              <option value="15">Cada 15 minutos</option>
+              <option value="25" selected>Cada 25 minutos (pomodoro)</option>
+              <option value="45">Cada 45 minutos</option>
+              <option value="60">Cada hora</option>
+            </select>
+            <button type="button" class="btn js-rem-toggle">Activar recordatorios</button>
+            <button type="button" class="btn btn-ghost js-rem-test">Probar ahora</button>
           </div>
+          <p class="mt-2 js-rem-status" aria-live="polite" style="font-weight:600"></p>
+          <p class="small muted mb-0">Funciona mientras esta pestaña esté abierta. Si das permiso, también verás una notificación cuando estés en otra ventana. Combínalo con la técnica pomodoro: al sonar, levántate, respira tres veces y bebe agua.</p>
+        </div>
+      </div>
+    </section>
 
-          <div class="callout focus mt-3" style="max-width:720px">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+    <!-- Ideas -->
+    <section class="screen alt" id="ideas">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span class="dot"></span>Sin que sea otra obligación</span>
+          <h2>Ideas para meter la respiración en tu día</h2>
+        </div>
+        <div class="grid grid-3 stagger">
+          <div class="card lift"><h3>🚦 Respira en las esperas</h3><p>Semáforo en rojo, microondas, ascensor, la cola del súper: momentos muertos perfectos para tres respiraciones lentas. Ya estás esperando de todas formas.</p></div>
+          <div class="card lift"><h3>🔁 El ritual entre tareas</h3><p>Antes de cambiar: <strong>cierra</strong> (guarda, cierra pestañas), <strong>respira</strong> (tres exhalaciones largas) y <strong>nombra</strong> en voz alta lo siguiente: «Ahora voy a…».</p></div>
+          <div class="card lift"><h3>🚶 Respira caminando</h3><p>Inhala por la nariz durante 4 pasos y exhala durante 6. Le das a tu mente una tarea y a tu cuerpo, movimiento.</p></div>
+          <div class="card lift"><h3>📱 Notificación = exhalación</h3><p>Antes de mirar la pantalla, una exhalación larga. Ganas un segundo para decidir si de verdad quieres mirarlo.</p></div>
+          <div class="card lift"><h3>🧸 Manos ocupadas</h3><p>Un fidget o una piedra lisa en la mano: aprieta suave al inhalar y suelta al exhalar. El movimiento ayuda a concentrarse.</p></div>
+          <div class="card lift"><h3>🌙 Bajar revoluciones</h3><p>Si tu mente se enciende al apagar la luz, prueba el 4-7-8 o cuenta respiraciones del 1 al 10. Si te pierdes, vuelve al 1 con una sonrisa.</p></div>
+        </div>
+        <div class="grid grid-2 mt-3 stagger" style="align-items:stretch">
+          <div class="callout focus mt-0 mb-0">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.6 4.5c2.1 0 3.9 1.3 5.4 3.2 1.5-1.9 3.3-3.2 5.4-3.2 3.6 0 5.7 3.7 4.2 7.2C19.5 16.4 12 21 12 21Z"/></svg>
             <p><strong>Un recordatorio con cariño</strong>Si un día te olvidas de todo esto, no pasa nada. Ni una semana. Ni un mes. La respiración no se va a ningún sitio: siempre está ahí esperándote para volver a empezar, sin rachas que mantener ni culpas que cargar.</p>
           </div>
-
-          <article class="prose mt-3">
-            <h2>¿Crees que podrías tener TDAH?</h2>
-            <p>Si al leer esta página te has sentido identificado/a, puede merecer la pena hablarlo con tu médico de cabecera, que podrá derivarte a psiquiatría o a un psicólogo especializado para una evaluación. Un diagnóstico no es una etiqueta que limita: para muchas personas es el comienzo de entenderse y tratarse con más amabilidad.</p>
-            <p>Y si ya tienes el diagnóstico, comenta con tu equipo profesional cómo integrar herramientas como estas en tu plan. Seguro que lo agradecen.</p>
-          </article>
-
-          <p class="small muted mt-2">Fuentes principales: Simon et al., <em>British Journal of Psychiatry</em> (2009); Zylowska et al., <em>Journal of Attention Disorders</em> (2008); Mitchell et al., <em>Journal of Attention Disorders</em> (2017); Melnychuk et al., <em>Psychophysiology</em> (2018); Zelano et al., <em>Journal of Neuroscience</em> (2016); Chervin et al., <em>Pediatrics</em> (2006). <a href="fuentes.html">Ver todas las fuentes</a>.</p>
+          <div class="card">
+            <h3>¿Crees que podrías tener TDAH?</h3>
+            <p>Si te has sentido identificado/a, puede merecer la pena hablarlo con tu médico de cabecera, que podrá derivarte a psiquiatría o a un psicólogo especializado. Un diagnóstico no es una etiqueta que limita: para muchas personas es el comienzo de entenderse y tratarse con más amabilidad. Y si ya lo tienes, comenta con tu equipo cómo integrar estas herramientas en tu plan.</p>
+          </div>
         </div>
+        <p class="small muted mt-3 center">Fuentes principales: Simon et al., <em>British Journal of Psychiatry</em> (2009); Zylowska et al., <em>Journal of Attention Disorders</em> (2008); Mitchell et al., <em>Journal of Attention Disorders</em> (2017); Melnychuk et al., <em>Psychophysiology</em> (2018); Zelano et al., <em>Journal of Neuroscience</em> (2016); Chervin et al., <em>Pediatrics</em> (2006). <a href="fuentes.html">Ver todas las fuentes</a>.</p>
       </div>
     </section>
   </main>
@@ -223,9 +310,10 @@
       <div class="footer-grid">
         <div>
           <a class="brand" href="index.html" aria-label="WellBreath, inicio">
-            <img class="brand-mark" src="img/favicon.svg" alt="" width="36" height="36">
-            <span><span class="brand-name">WellBreath</span><span class="brand-tag">Respirar bien, vivir mejor</span></span>
+            <img class="brand-mark" src="img/favicon.svg" alt="" width="44" height="44">
+            <span><span class="brand-name">Well<span>Breath</span></span><span class="brand-tag">Respirar bien, vivir mejor</span></span>
           </a>
+          <div class="footer-colors" aria-hidden="true"><span style="background:var(--blue)"></span><span style="background:var(--green)"></span><span style="background:var(--yellow)"></span><span style="background:var(--violet)"></span></div>
           <p class="mt-1">Un rincón tranquilo para recuperar algo que haces 20.000 veces al día. Hecho con cariño, basado en ciencia y en las ideas del libro <em>Respira</em>, de James Nestor.</p>
         </div>
         <div>
